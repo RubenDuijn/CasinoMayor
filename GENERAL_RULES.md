@@ -9,9 +9,16 @@
 - In written copy, planning notes, and website text, prefer the full dance names unless the user explicitly asks for the abbreviations.
 
 ## Project Context
-- Casino Mayor refers to the historic renovated building in Candelario, Spain.
+- Casino Mayor refers to the historic building project in Candelario, Spain.
+- The building is still being renovated.
 - This building is also referenced in the BlueWater Strategy project context.
 - Candelario is also a strong mountain destination, with access to hiking routes and bouldering opportunities in the surrounding landscape.
+
+## Project Status
+- Casino Mayor is not yet an operating venue.
+- The website serves two functions: present the future venue concept and help communicate a possible business plan.
+- Public-facing copy can describe the intended offer, but internal notes and planning documents should stay clear about what is operational now versus what is proposed for launch.
+- The opening timeline is communicated on-page via the top hero pill: "Grand Opening · Planned End 2027".
 
 ## Hosting and Domain
 - Official website URL: http://casinomayor.es
@@ -24,8 +31,13 @@
 - 37710 Candelario
 - Salamanca, Spain
 
+## Contact
+- Mobile WhatsApp: +34 659 376 099
+- Email: casinomayor.es@gmail.com
+- Future operational email: reservations@casinomayor.es
+
 ## Purpose
-Casino Mayor is a heritage venue in Candelario where culture, entertainment, hospitality, and social nightlife come together under one historic roof.
+Casino Mayor is a heritage venue concept in Candelario where culture, entertainment, hospitality, and social nightlife are intended to come together under one historic roof.
 
 ## Program Scope
 - Theatre & Dance: live performances, dance courses led by renowned artists, and social dance programming.
@@ -54,7 +66,9 @@ On dance evenings, all three rooms can run in parallel: the Theatre holds the ma
 - Keep copy concise and consistent across sections.
 - Avoid exaggerated claims unless verified.
 - Keep paragraphs short for desktop and mobile readability.
+- In markdown and planning material, distinguish clearly between current renovation status and future business-plan vision.
 - On the public website, do not imply regulated gambling unless it is confirmed. Prefer language such as first-floor salon, upstairs lounge, or cocktail room when referring to the room currently called Casino.
+- On the public website, avoid presenting all programme elements as already operational if they are still part of the opening plan.
 
 ## Messaging Example
 - Dance classes are led by renowned artists on the Theatre stage, giving every participant a perfect sightline to follow and practice each step.
