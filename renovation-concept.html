@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Café Lounge — Renovation Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5ede0;
+    --ivory: #faf6ef;
+    --warm-white: #fff9f2;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dark: #9a7230;
+    --espresso: #2a1a0e;
+    --walnut: #4a2f1a;
+    --mocha: #6b4226;
+    --blush: #e8d5c4;
+    --sage: #8a9e8c;
+    --velvet-green: #2d4a3e;
+    --velvet-emerald: #1a3328;
+  }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(--espresso);
+font-family: 'Cormorant Garamond', serif;
+color: var(--cream);
+overflow-x: hidden;
+}
+
+/* ── HERO ── */
+.hero {
+position: relative;
+height: 100vh;
+min-height: 600px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+}
+
+.hero-bg {
+position: absolute; inset: 0;
+background:
+radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
+linear-gradient(160deg, #1a0f07 0%, #2a1a0e 40%, #1e130a 100%);
+}
+
+/* Decorative arch pattern */
+.arch-bg {
+position: absolute; inset: 0;
+display: flex; align-items: flex-end; justify-content: center;
+gap: 0; overflow: hidden; opacity: 0.12;
+}
+.arch-shape {
+width: 200px; height: 320px; flex-shrink: 0;
+border: 2px solid var(--gold);
+border-bottom: none;
+border-radius: 100px 100px 0 0;
+margin: 0 12px;
+animation: archFade 4s ease forwards;
+opacity: 0;
+}
+.arch-shape:nth-child(1) { animation-delay: 0.2s; }
+.arch-shape:nth-child(2) { animation-delay: 0.5s; height: 380px; }
+.arch-shape:nth-child(3) { animation-delay: 0.8s; height: 340px; }
+.arch-shape:nth-child(4) { animation-delay: 1.1s; height: 310px; }
+.arch-shape:nth-child(5) { animation-delay: 1.4s; height: 360px; }
+
+@keyframes archFade {
+to { opacity: 1; }
+}
+
+.hero-content {
+position: relative; z-index: 2;
+text-align: center;
+padding: 2rem;
+animation: fadeUp 1.2s ease forwards;
+opacity: 0;
+animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+font-family: 'Cinzel', serif;
+font-size: 0.7rem;
+letter-spacing: 0.4em;
+color: var(--gold);
+text-transform: uppercase;
+margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+font-family: 'Cinzel', serif;
+font-size: clamp(2.8rem, 7vw, 5.5rem);
+font-weight: 400;
+line-height: 1.05;
+color: var(--cream);
+margin-bottom: 0.5rem;
+}
+
+.hero h1 em {
+font-family: 'Cormorant Garamond', serif;
+font-style: italic;
+font-weight: 300;
+color: var(--gold-light);
+display: block;
+font-size: 1.15em;
+}
+
+.divider {
+width: 80px; height: 1px;
+background: linear-gradient(90deg, transparent, var(--gold), transparent);
+margin: 1.8rem auto;
+}
+
+.hero-sub {
+font-size: 1.15rem;
+font-style: italic;
+color: var(--blush);
+opacity: 0.8;
+max-width: 420px;
+line-height: 1.7;
+}
+
+.scroll-cue {
+position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+display: flex; flex-direction: column; align-items: center; gap: 8px;
+color: var(--gold); opacity: 0.6;
+font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.25em;
+animation: fadeUp 1s ease forwards 2s; opacity: 0;
+}
+.scroll-line {
+width: 1px; height: 40px;
+background: linear-gradient(to bottom, var(--gold), transparent);
+animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+0%, 100% { opacity: 0.4; transform: scaleY(1); }
+50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* ── BEFORE / AFTER ── */
+.section {
+padding: 6rem 2rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.section-label {
+font-family: 'Cinzel', serif;
+font-size: 0.65rem;
+letter-spacing: 0.4em;
+color: var(--gold);
+text-transform: uppercase;
+margin-bottom: 1rem;
+text-align: center;
+}
+
+.section-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(2rem, 4vw, 3rem);
+font-weight: 300;
+text-align: center;
+color: var(--ivory);
+margin-bottom: 4rem;
+line-height: 1.2;
+}
+
+.before-after {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 3px;
+border-radius: 4px;
+overflow: hidden;
+box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+}
+
+.ba-panel {
+position: relative;
+padding: 2.5rem;
+min-height: 400px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+
+.ba-before {
+background:
+linear-gradient(to top, rgba(42,26,14,0.85) 0%, rgba(42,26,14,0.3) 60%, transparent 100%),
+url('/mnt/user-data/uploads/3fcc8f94-3aae-4638-aa7b-fab20bcd90ab_3fcc8f94-3aae-4638-aa7b-fab20bcd90ab.png') center/cover;
+}
+
+.ba-after {
+background:
+linear-gradient(to top, rgba(26,51,40,0.9) 0%, rgba(26,51,40,0.4) 60%, transparent 100%),
+linear-gradient(135deg, #1a3328 0%, #2d4a3e 40%, #1e3a2f 100%);
+display: flex; flex-direction: column; justify-content: space-between;
+padding: 0;
+overflow: hidden;
+}
+
+.ba-tag {
+position: absolute; top: 1.5rem; left: 1.5rem;
+font-family: 'Cinzel', serif;
+font-size: 0.6rem;
+letter-spacing: 0.3em;
+background: rgba(201,168,76,0.2);
+border: 1px solid var(--gold);
+color: var(--gold);
+padding: 0.4rem 1rem;
+text-transform: uppercase;
+}
+
+.ba-label {
+font-family: 'Cinzel', serif;
+font-size: 0.8rem;
+letter-spacing: 0.2em;
+color: var(--gold);
+margin-bottom: 0.5rem;
+text-transform: uppercase;
+}
+
+.ba-desc {
+font-size: 1.2rem;
+font-style: italic;
+color: var(--blush);
+line-height: 1.5;
+}
+
+/* Illustrated After View */
+.room-illustration {
+width: 100%; height: 100%;
+position: relative;
+padding: 2rem;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+}
+
+.room-scene {
+position: absolute; inset: 0;
+overflow: hidden;
+}
+
+/* Floor */
+.floor {
+position: absolute; bottom: 0; left: 0; right: 0;
+height: 35%;
+background: linear-gradient(to top, #3d2410, #5a3520);
+}
+.floor::before {
+content: '';
+position: absolute; inset: 0;
+background: repeating-linear-gradient(
+90deg,
+transparent 0px,
+transparent 38px,
+rgba(0,0,0,0.15) 38px,
+rgba(0,0,0,0.15) 40px
+);
+}
+
+/* Walls */
+.wall {
+position: absolute; top: 0; left: 0; right: 0;
+height: 68%;
+background: linear-gradient(to bottom, #e8ddd0, #d4c4b0);
+}
+
+/* Wainscoting */
+.wainscot {
+position: absolute;
+bottom: 35%; left: 0; right: 0;
+height: 20%;
+background: linear-gradient(to bottom, #c8b89a, #b8a888);
+border-top: 2px solid var(--gold-dark);
+}
+
+/* Ceiling */
+.ceiling {
+position: absolute; top: 0; left: 0; right: 0;
+height: 12%;
+background: linear-gradient(to bottom, #f0e8d8, #e8ddd0);
+}
+.ceiling-moulding {
+position: absolute; bottom: 0; left: 0; right: 0;
+height: 6px;
+background: linear-gradient(to bottom, #c8a860, #a88840);
+}
+
+/* Arch windows */
+.window-row {
+position: absolute;
+top: 12%; left: 5%; right: 5%;
+height: 50%;
+display: flex; gap: 3%;
+align-items: flex-start;
+}
+
+.window {
+flex: 1;
+height: 100%;
+background: linear-gradient(135deg, #b8d4e8 0%, #d0e8f4 40%, #c0d8ec 100%);
+border-radius: 60% 60% 0 0 / 30% 30% 0 0;
+border: 3px solid var(--gold-dark);
+position: relative;
+overflow: hidden;
+box-shadow: inset 0 0 20px rgba(255,255,255,0.3);
+}
+.window::before {
+content: '';
+position: absolute; inset: 0;
+background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 60%);
+}
+.window-grid {
+position: absolute; inset: 0;
+background:
+linear-gradient(to right, transparent 49%, rgba(180,140,60,0.6) 49%, rgba(180,140,60,0.6) 51%, transparent 51%),
+linear-gradient(to bottom, transparent 49%, rgba(180,140,60,0.6) 49%, rgba(180,140,60,0.6) 51%, transparent 51%);
+}
+.window-drape {
+position: absolute; top: 0;
+width: 22%; height: 100%;
+background: linear-gradient(90deg, #1a3328, #2d4a3e);
+opacity: 0.9;
+}
+.window-drape.left { left: 0; border-right: 2px solid var(--gold-dark); }
+.window-drape.right { right: 0; border-left: 2px solid var(--gold-dark); }
+
+/* Sofa group */
+.furniture-scene {
+position: absolute;
+bottom: 35%; left: 0; right: 0;
+height: 30%;
+display: flex;
+justify-content: space-around;
+align-items: flex-end;
+padding: 0 8%;
+}
+
+.sofa-group {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 3px;
+}
+
+.sofa {
+display: flex;
+align-items: flex-end;
+gap: 2px;
+}
+
+.sofa-back {
+width: 80px; height: 30px;
+background: linear-gradient(to top, #1a3328, #2d4a3e);
+border-radius: 4px 4px 0 0;
+border: 1px solid var(--gold-dark);
+position: absolute;
+bottom: 18px;
+}
+
+.sofa-body {
+position: relative;
+width: 80px; height: 22px;
+background: linear-gradient(to bottom, #2d4a3e, #1a3328);
+border-radius: 3px;
+border: 1px solid var(--gold-dark);
+}
+
+.sofa-cushion {
+width: 22px; height: 14px;
+background: linear-gradient(to bottom, #3a5a4e, #2a4a3e);
+border-radius: 3px 3px 0 0;
+border: 1px solid rgba(201,168,76,0.4);
+position: absolute;
+top: -14px;
+}
+.sofa-cushion:nth-child(1) { left: 3px; }
+.sofa-cushion:nth-child(2) { left: 29px; }
+.sofa-cushion:nth-child(3) { left: 55px; }
+
+.sofa-leg {
+width: 4px; height: 5px;
+background: var(--gold-dark);
+border-radius: 0 0 2px 2px;
+position: absolute;
+bottom: -5px;
+}
+.sofa-leg.l1 { left: 6px; }
+.sofa-leg.l2 { right: 6px; }
+
+.coffee-table {
+width: 50px; height: 5px;
+background: linear-gradient(to bottom, #7a5030, #5a3820);
+border-radius: 3px;
+border: 1px solid var(--gold-dark);
+position: relative;
+margin-bottom: 3px;
+}
+.coffee-table::before, .coffee-table::after {
+content: '';
+position: absolute; bottom: -4px;
+width: 3px; height: 4px;
+background: var(--walnut);
+}
+.coffee-table::before { left: 6px; }
+.coffee-table::after { right: 6px; }
+
+/* Pendant lights */
+.pendant-row {
+position: absolute;
+top: 12%; left: 0; right: 0;
+display: flex; justify-content: space-around;
+padding: 0 20%;
+}
+
+.pendant {
+display: flex; flex-direction: column; align-items: center;
+}
+
+.pendant-wire {
+width: 1px; height: 20px;
+background: var(--gold-dark);
+}
+
+.pendant-shade {
+width: 18px; height: 12px;
+background: linear-gradient(to bottom, var(--gold), var(--gold-dark));
+border-radius: 0 0 50% 50%;
+border: 1px solid var(--gold-dark);
+}
+
+.pendant-glow {
+position: absolute;
+width: 40px; height: 40px;
+background: radial-gradient(circle, rgba(255,220,100,0.25) 0%, transparent 70%);
+top: 22px; left: -11px;
+pointer-events: none;
+}
+
+/* Plants */
+.plant {
+position: absolute;
+bottom: 35%;
+}
+.plant-pot {
+width: 14px; height: 12px;
+background: linear-gradient(to bottom, #8a6040, #6a4020);
+border-radius: 2px 2px 4px 4px;
+border: 1px solid var(--gold-dark);
+}
+.plant-leaves {
+position: absolute;
+bottom: 10px; left: 50%;
+transform: translateX(-50%);
+width: 30px; height: 30px;
+background: radial-gradient(ellipse, #2a5a30, #1a4020);
+border-radius: 50%;
+box-shadow: -8px -4px 0 #1e4a28, 8px -4px 0 #1e4a28;
+}
+
+.room-caption {
+position: absolute;
+bottom: 2rem; left: 2rem; right: 2rem;
+z-index: 2;
+}
+
+/* ── DESIGN DETAILS ── */
+.details-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1px;
+background: rgba(201,168,76,0.15);
+margin-top: 6rem;
+border: 1px solid rgba(201,168,76,0.15);
+}
+
+.detail-card {
+background: rgba(26,15,7,0.8);
+padding: 2.5rem 2rem;
+transition: background 0.4s;
+}
+.detail-card:hover {
+background: rgba(45,26,10,0.9);
+}
+
+.detail-icon {
+font-size: 1.8rem;
+margin-bottom: 1.2rem;
+color: var(--gold);
+display: block;
+}
+
+.detail-title {
+font-family: 'Cinzel', serif;
+font-size: 0.75rem;
+letter-spacing: 0.25em;
+color: var(--gold);
+text-transform: uppercase;
+margin-bottom: 0.8rem;
+}
+
+.detail-text {
+font-size: 1.05rem;
+font-style: italic;
+color: var(--blush);
+line-height: 1.7;
+opacity: 0.85;
+}
+
+/* ── PALETTE ── */
+.palette-section {
+padding: 5rem 2rem;
+max-width: 1200px;
+margin: 0 auto;
+border-top: 1px solid rgba(201,168,76,0.2);
+}
+
+.swatches {
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+margin-top: 2.5rem;
+justify-content: center;
+}
+
+.swatch {
+display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
+}
+
+.swatch-circle {
+width: 72px; height: 72px;
+border-radius: 50%;
+border: 1px solid rgba(201,168,76,0.3);
+box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.swatch-name {
+font-family: 'Cinzel', serif;
+font-size: 0.55rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--blush);
+opacity: 0.7;
+text-align: center;
+max-width: 80px;
+}
+
+/* ── FOOTER ── */
+.footer {
+border-top: 1px solid rgba(201,168,76,0.2);
+padding: 3rem 2rem;
+text-align: center;
+}
+.footer-logo {
+font-family: 'Cinzel', serif;
+font-size: 1rem;
+letter-spacing: 0.3em;
+color: var(--gold);
+text-transform: uppercase;
+margin-bottom: 0.5rem;
+}
+.footer-sub {
+font-family: 'Cormorant Garamond', serif;
+font-style: italic;
+color: var(--blush);
+opacity: 0.5;
+font-size: 0.95rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+.before-after { grid-template-columns: 1fr; }
+.details-grid { grid-template-columns: 1fr; }
+.swatches { gap: 0.8rem; }
+.swatch-circle { width: 56px; height: 56px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="arch-bg">
+    <div class="arch-shape"></div>
+    <div class="arch-shape"></div>
+    <div class="arch-shape"></div>
+    <div class="arch-shape"></div>
+    <div class="arch-shape"></div>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow">Renovation Concept</p>
+    <h1>The Salon<em>Café Lounge</em></h1>
+    <div class="divider"></div>
+    <p class="hero-sub">A classic, elegant transformation — where grand arched windows meet velvet sofas and candlelit warmth</p>
+  </div>
+  <div class="scroll-cue">
+    <span>Discover</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+
+<section class="section">
+  <p class="section-label">The Transformation</p>
+  <h2 class="section-title">From Ruin<br><em style="font-style:italic;color:var(--gold-light)">to Grandeur</em></h2>
+
+  <div class="before-after">
+    <!-- BEFORE -->
+    <div class="ba-panel ba-before">
+      <span class="ba-tag">Before</span>
+      <div>
+        <p class="ba-label">Existing Condition</p>
+        <p class="ba-desc">Stripped plaster, exposed structure, weathered floorboards — a blank canvas of beautiful bones</p>
+      </div>
+    </div>
+
+
+<!-- AFTER: Illustrated room -->
+<div class="ba-panel ba-after">
+  <div class="room-illustration">
+    <div class="room-scene">
+
+      <!-- Ceiling -->
+      <div class="ceiling">
+        <div class="ceiling-moulding"></div>
+      </div>
+
+      <!-- Walls -->
+      <div class="wall"></div>
+
+      <!-- Wainscot -->
+      <div class="wainscot"></div>
+
+      <!-- Windows -->
+      <div class="window-row">
+        <div class="window">
+          <div class="window-grid"></div>
+          <div class="window-drape left"></div>
+          <div class="window-drape right"></div>
+        </div>
+        <div class="window">
+          <div class="window-grid"></div>
+          <div class="window-drape left"></div>
+          <div class="window-drape right"></div>
+        </div>
+        <div class="window">
+          <div class="window-grid"></div>
+          <div class="window-drape left"></div>
+          <div class="window-drape right"></div>
+        </div>
+      </div>
+
+      <!-- Pendants -->
+      <div class="pendant-row">
+        <div class="pendant" style="position:relative">
+          <div class="pendant-wire"></div>
+          <div class="pendant-shade"></div>
+          <div class="pendant-glow"></div>
+        </div>
+        <div class="pendant" style="position:relative">
+          <div class="pendant-wire"></div>
+          <div class="pendant-shade"></div>
+          <div class="pendant-glow"></div>
+        </div>
+      </div>
+
+      <!-- Furniture -->
+      <div class="furniture-scene">
+        <!-- Sofa group left -->
+        <div style="position:relative; margin-bottom:8px;">
+          <div class="sofa" style="position:relative; width:80px; height:42px;">
+            <div style="position:absolute;bottom:18px;left:0;right:0;height:28px;background:linear-gradient(to top,#1a3328,#2d4a3e);border-radius:4px 4px 0 0;border:1px solid #9a7230;"></div>
+            <div class="sofa-body" style="position:absolute;bottom:0;left:0;right:0;">
+              <div class="sofa-cushion" style="left:3px"></div>
+              <div class="sofa-cushion" style="left:29px"></div>
+              <div class="sofa-cushion" style="left:55px"></div>
+              <div class="sofa-leg l1"></div>
+              <div class="sofa-leg l2"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coffee table -->
+        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:5px;">
+          <div style="width:5px;height:5px;background:var(--gold);border-radius:50%;margin-bottom:2px;box-shadow:0 0 6px var(--gold);"></div>
+          <div class="coffee-table"></div>
+        </div>
+
+        <!-- Sofa group right (facing) -->
+        <div style="position:relative; margin-bottom:8px;">
+          <div style="position:relative; width:80px; height:42px;">
+            <div style="position:absolute;bottom:18px;left:0;right:0;height:28px;background:linear-gradient(to top,#1a3328,#2d4a3e);border-radius:4px 4px 0 0;border:1px solid #9a7230;"></div>
+            <div style="position:absolute;bottom:0;left:0;right:0;width:80px;height:22px;background:linear-gradient(to bottom,#2d4a3e,#1a3328);border-radius:3px;border:1px solid #9a7230;">
+              <div class="sofa-cushion" style="left:3px"></div>
+              <div class="sofa-cushion" style="left:29px"></div>
+              <div class="sofa-cushion" style="left:55px"></div>
+              <div class="sofa-leg l1"></div>
+              <div class="sofa-leg l2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plants -->
+      <div class="plant" style="left:4%; bottom:35%;">
+        <div class="plant-leaves"></div>
+        <div class="plant-pot"></div>
+      </div>
+      <div class="plant" style="right:4%; bottom:35%;">
+        <div class="plant-leaves"></div>
+        <div class="plant-pot"></div>
+      </div>
+
+      <!-- Floor -->
+      <div class="floor"></div>
+
+      <!-- Rug -->
+      <div style="position:absolute;bottom:36%;left:15%;right:15%;height:8%;background:repeating-linear-gradient(45deg,rgba(201,168,76,0.08),rgba(201,168,76,0.08) 4px,transparent 4px,transparent 12px);border:1px solid rgba(201,168,76,0.25);border-radius:2px;"></div>
+
+    </div>
+
+    <!-- Caption overlay -->
+    <div class="room-caption">
+      <p class="ba-label">After — Illustrated Vision</p>
+      <p class="ba-desc">Velvet emerald sofas, brass pendants, restored parquet floors, floor-length drapes</p>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- Design Details -->
+
+  <div class="details-grid">
+    <div class="detail-card">
+      <span class="detail-icon">🛋</span>
+      <p class="detail-title">Seating</p>
+      <p class="detail-text">Deep-buttoned velvet sofas in forest green & cognac, arranged in intimate conversation clusters around brass-legged coffee tables</p>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🪟</span>
+      <p class="detail-title">Windows & Drapes</p>
+      <p class="detail-text">The original arched windows preserved as a centrepiece, dressed with floor-length emerald silk drapes edged in gold braid</p>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🕯</span>
+      <p class="detail-title">Lighting</p>
+      <p class="detail-text">A constellation of antique brass pendants and wall sconces creates a warm, intimate candlelit atmosphere day and night</p>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🪵</span>
+      <p class="detail-title">Floors & Walls</p>
+      <p class="detail-text">Original parquet floors restored and polished to a warm honey tone; walls refinished in warm ivory plaster with dark walnut wainscoting</p>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">☕</span>
+      <p class="detail-title">Bar Counter</p>
+      <p class="detail-text">A marble-topped espresso bar with brass fittings along the back wall — the anchor of the room, framed by antique mirror panels</p>
+    </div>
+    <div class="detail-card">
+      <span class="detail-icon">🌿</span>
+      <p class="detail-title">Botanicals & Art</p>
+      <p class="detail-text">Tall fiddle-leaf figs in ceramic urns, and gilt-framed artwork punctuating the walls to add depth and a gallery-like elegance</p>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE -->
+
+<section class="palette-section">
+  <p class="section-label">Colour Palette</p>
+  <h2 class="section-title" style="margin-bottom:0">The Tones of the Salon</h2>
+  <div class="swatches">
+    <div class="swatch">
+      <div class="swatch-circle" style="background:#2d4a3e;"></div>
+      <span class="swatch-name">Velvet Emerald</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-circle" style="background:#c9a84c;"></div>
+      <span class="swatch-name">Antique Gold</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-circle" style="background:#f5ede0;"></div>
+      <span class="swatch-name">Warm Ivory</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-circle" style="background:#7a4a28;border:1px solid rgba(255,255,255,0.1);"></div>
+      <span class="swatch-name">Cognac</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-circle" style="background:#2a1a0e;border:1px solid rgba(255,255,255,0.1);"></div>
+      <span class="swatch-name">Espresso</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-circle" style="background:#8a9e8c;"></div>
+      <span class="swatch-name">Sage</span>
+    </div>
+    <div class="swatch">
+      <div class="swatch-circle" style="background:#e8d5c4;"></div>
+      <span class="swatch-name">Rose Blush</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <p class="footer-logo">The Salon Café</p>
+  <p class="footer-sub">A classic renovation concept — designed for warmth, elegance &amp; conversation</p>
+</footer>
+
+</body>
+</html>
