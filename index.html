@@ -96,6 +96,13 @@
       min-height: 100vh;
     }
 
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold-strong);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
     .shell {
       width: min(1180px, 92%);
       margin: 0 auto;
@@ -1034,6 +1041,32 @@
       box-shadow: 0 0 12px rgba(240, 205, 137, 0.12);
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .hero-stage,
+      .heritage-tile,
+      .card,
+      .agenda-day,
+      .event-card,
+      .visit,
+      .button,
+      .lang-toggle,
+      nav a {
+        transform: none !important;
+      }
+    }
+
     .hours-title {
       font-size: 1.35rem;
       margin-bottom: 0.4rem;
@@ -1629,7 +1662,7 @@
         'din-item-4-note': 'Un perfil de maridaje tinto para tablas, cenas en escenario y noches de cata.',
         'din-item-4-tag': 'Vino',
         'ag-h2': 'Agenda Semanal',
-        'ag-intro': 'La semana se organiza por ambientes y formatos: noches de baile dedicadas, cena con escenario en viernes y un domingo más pausado de cine, vino y tapas. En torno a las grandes fiestas de Candelario, el programa se amplía aún más.',
+        'ag-intro': 'La semana se organiza por ambientes y formatos: noches de baile dedicadas, cena con escenario el viernes y un domingo más pausado de cine, vino y tapas. En torno a las grandes fiestas de Candelario, el programa se amplía aún más.',
         'ag-wed-small': 'Miércoles',
         'ag-wed-title': 'Noche de Salsa',
         'ag-wed-time-1': '19:00 &middot; Teatro',
