@@ -329,13 +329,22 @@
       border-radius: 12px;
       min-height: 390px;
       background:
-        linear-gradient(180deg, rgba(17, 13, 18, 0.04) 0%, rgba(17, 13, 18, 0.34) 100%),
+        linear-gradient(180deg, rgba(17, 13, 18, 0) 0%, rgba(17, 13, 18, 0.28) 100%),
         url("images/Candelario Theatre.png") center center / cover no-repeat;
-      border: 1px solid rgba(248, 225, 183, 0.14);
+      background-attachment: fixed;
+      border: 1px solid rgba(248, 225, 183, 0.18);
       display: grid;
       align-content: end;
       padding: 1rem;
       overflow: hidden;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(217, 181, 111, 0.08);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-stage:hover {
+      transform: translateY(-3px);
+      border-color: rgba(248, 225, 183, 0.28);
+      box-shadow: 0 24px 52px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(217, 181, 111, 0.06);
     }
 
     .hero-stage-note {
@@ -343,12 +352,19 @@
       font-size: 0.73rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #ebd8b2;
-      border: 1px solid rgba(239, 205, 140, 0.36);
+      color: #f5e8d0;
+      border: 1px solid rgba(239, 205, 140, 0.42);
       border-radius: 999px;
       padding: 0.17rem 0.58rem;
-      background: rgba(18, 13, 18, 0.54);
+      background: rgba(18, 13, 18, 0.62);
       margin-bottom: 0.55rem;
+      transition: all 0.4s ease;
+    }
+
+    .hero-stage:hover .hero-stage-note {
+      color: #fef4e4;
+      border-color: rgba(239, 205, 140, 0.58);
+      background: rgba(18, 13, 18, 0.72);
     }
 
     .hero-stage strong {
