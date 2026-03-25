@@ -431,6 +431,12 @@
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
     }
 
+    .card-static {
+      animation-delay: 0s;
+      opacity: 1;
+      transform: none;
+    }
+
     .cards .card:nth-child(2) { animation-delay: 0.1s; }
     .cards .card:nth-child(3) { animation-delay: 0.2s; }
 
@@ -556,6 +562,15 @@
 
     .menu-preview {
       margin-top: 1rem;
+    }
+
+    .section-intro-wide {
+      margin: 1rem 0 0;
+      max-width: none;
+    }
+
+    .visit-intro {
+      margin-bottom: 0.25rem;
     }
 
     .menu-list {
@@ -980,6 +995,12 @@
       transform: translateY(-1px);
     }
 
+    .event-date-meta {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
     .event-body h3 {
       font-size: 1.25rem;
       margin-bottom: 0.3rem;
@@ -1011,6 +1032,11 @@
       border-color: rgba(217, 181, 111, 0.48);
       background: rgba(59, 44, 26, 0.28);
       box-shadow: 0 0 12px rgba(240, 205, 137, 0.12);
+    }
+
+    .hours-title {
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
     }
 
     @media (max-width: 640px) {
@@ -1147,16 +1173,16 @@
 
     <section id="dining" class="section">
       <div class="duo">
-        <article class="card" style="animation-delay: 0s; opacity: 1; transform: none;">
+        <article class="card card-static">
           <h3 data-i18n="din-h3-1">Dining &amp; Lounge</h3>
           <p data-i18n="din-p-1">Planned opening concept: seasonal plates and sharing formats for long evenings, paired with cocktails and bodega-led wine service.</p>
         </article>
-        <article class="card" style="animation-delay: 0s; opacity: 1; transform: none;">
+        <article class="card card-static">
           <h3 data-i18n="din-h3-2">Chef's Table Nights</h3>
           <p data-i18n="din-p-2">Planned format: monthly menus tied to show nights and cultural evenings in Candelario, from bodega tastings to stage dinners.</p>
         </article>
       </div>
-      <article class="card menu-preview" style="animation-delay: 0s; opacity: 1; transform: none;">
+      <article class="card card-static menu-preview">
         <h3 data-i18n="din-h3-3">Opening Concept Menu</h3>
         <p data-i18n="din-p-3">Illustrative launch menu direction: mountain comfort, regional ingredients, house cocktails, and bodega pairings.</p>
         <ul class="menu-list">
@@ -1189,7 +1215,7 @@
             <span class="menu-item-tag" data-i18n="din-item-4-tag">Wine</span>
           </li>
         </ul>
-        <p class="section-intro" style="margin: 1rem 0 0; max-width: none;" data-i18n="din-note">This is a pre-opening concept menu. Final dishes, pricing, and service schedule will be confirmed closer to launch.</p>
+        <p class="section-intro section-intro-wide" data-i18n="din-note">This is a pre-opening concept menu. Final dishes, pricing, and service schedule will be confirmed closer to launch.</p>
         <div class="cta-row">
           <a class="button secondary" href="mailto:casinomayor.es@gmail.com?subject=Dining%20and%20group%20menu%20enquiry" data-i18n="din-cta">Request Dining &amp; Group Menu</a>
         </div>
@@ -1271,7 +1297,7 @@
         </div>
 
         <div class="event-card">
-          <div class="event-date" data-i18n="ev-3-date">26 Jul<br><small style="font-size:0.75rem; font-weight:400; color:var(--muted)" data-i18n="ev-3-duration">(4 days)</small></div>
+          <div class="event-date" data-i18n="ev-3-date">26 Jul<br><small class="event-date-meta" data-i18n="ev-3-duration">(4 days)</small></div>
           <div class="event-body">
             <span class="event-tag" data-i18n="ev-3-tag">Santa Ana &mdash; Fiestas Mayores</span>
             <h3 data-i18n="ev-3-h3">Gala Stage Dinner &amp; Peak Programme</h3>
@@ -1280,7 +1306,7 @@
         </div>
 
         <div class="event-card">
-          <div class="event-date" data-i18n="ev-4-date">Aug<br><small style="font-size:0.75rem; font-weight:400; color:var(--muted)" data-i18n="ev-4-duration">(2nd Sunday)</small></div>
+          <div class="event-date" data-i18n="ev-4-date">Aug<br><small class="event-date-meta" data-i18n="ev-4-duration">(2nd Sunday)</small></div>
           <div class="event-body">
             <span class="event-tag" data-i18n="ev-4-tag">La Boda T&iacute;pica</span>
             <h3 data-i18n="ev-4-h3">Heritage Gala Evening</h3>
@@ -1304,7 +1330,7 @@
       <div class="visit">
         <div>
           <h2 data-i18n="vis-h2">Visit Casino Mayor</h2>
-          <p class="section-intro" style="margin-bottom: 0.25rem;" data-i18n="vis-intro">Casino Mayor is currently in renovation phase in the heart of Candelario, with pre-opening enquiries welcome for stays, private events, dining, and dance programmes.</p>
+          <p class="section-intro visit-intro" data-i18n="vis-intro">Casino Mayor is currently in renovation phase in the heart of Candelario, with pre-opening enquiries welcome for stays, private events, dining, and dance programmes.</p>
           <ul>
             <li data-i18n="vis-address">Address: C. Mayor, 5, 37710 Candelario, Salamanca, Spain</li>
           </ul>
@@ -1316,7 +1342,7 @@
           <p class="contact-meta" data-i18n="vis-direct">Direct contact: WhatsApp +34 659 376 099 &middot; casinomayor.es@gmail.com</p>
         </div>
         <aside class="hours">
-          <h3 style="font-size:1.35rem; margin-bottom: 0.4rem;" data-i18n="vis-hours-h3">Project Status &amp; Access</h3>
+          <h3 class="hours-title" data-i18n="vis-hours-h3">Project Status &amp; Access</h3>
           <p data-i18n="vis-hours-1">Current phase: renovation and concept development.</p>
           <p data-i18n="vis-hours-2">Tentative grand opening: Q4 2027.</p>
           <p data-i18n="vis-hours-3">On-site visits and programme enquiries are coordinated via WhatsApp and email.</p>
