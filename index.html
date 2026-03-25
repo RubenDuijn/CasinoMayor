@@ -426,56 +426,85 @@
 
     .heritage-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.9rem;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr) minmax(0, 1.6fr);
+      grid-template-areas:
+        "casino casino facade"
+        "street terrace terrace";
+      gap: 1.05rem;
     }
 
     .heritage-tile {
-      background: rgba(31, 26, 36, 0.82);
-      border: 1px solid var(--line);
-      border-radius: 12px;
+      background: rgba(24, 19, 30, 0.9);
+      border: 1px solid rgba(217, 181, 111, 0.2);
+      border-radius: 14px;
       overflow: hidden;
-    }
-
-    .heritage-tile.portrait {
-      grid-row: span 2;
-    }
-
-    .heritage-tile.terrace-large {
-      grid-column: span 2;
-      grid-row: span 2;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
     }
 
     .heritage-tile img {
       width: 100%;
-      height: 180px;
+      height: auto;
       object-fit: cover;
-      display: block;
-      filter: saturate(0.86) contrast(1.02);
-    }
-
-    .heritage-tile.portrait img {
-      height: 380px;
-      object-position: center top;
-    }
-
-    .heritage-tile.terrace-large img {
-      height: 380px;
       object-position: center center;
-      filter: saturate(1.02) contrast(1.06) brightness(1.2);
+      display: block;
+      filter: saturate(0.95) contrast(1.04);
     }
 
-    .heritage-tile img.facade-full {
-      object-fit: cover;
+    .heritage-tile.casino-main {
+      grid-area: casino;
+    }
+
+    .heritage-tile.facade-side {
+      grid-area: facade;
+    }
+
+    .heritage-tile.street-side {
+      grid-area: street;
+    }
+
+    .heritage-tile.terrace-band {
+      grid-area: terrace;
+    }
+
+    /* Feature tiles: Casino and Terrace */
+    .heritage-tile.casino-main img,
+    .heritage-tile.terrace-band img {
+      height: 495px;
+    }
+
+    /* Side tiles: Facade and Street */
+    .heritage-tile.facade-side img,
+    .heritage-tile.street-side img {
+      height: 465px;
+    }
+
+    /* Fine-tune focus point for Facade */
+    .heritage-tile.facade-side img {
       object-position: center 30%;
     }
 
     .heritage-tile p {
       margin: 0;
-      padding: 0.65rem 0.75rem;
-      color: #d2c4b0;
-      font-size: 0.88rem;
+      padding: 0.72rem 0.85rem;
+      color: #dacdb9;
+      font-size: 0.84rem;
+      line-height: 1.3;
+      letter-spacing: 0.03em;
+      background: linear-gradient(180deg, rgba(27, 21, 33, 0.94), rgba(22, 17, 27, 0.94));
       border-top: 1px solid rgba(217, 181, 111, 0.16);
+    }
+
+    /* All captions display at natural height */
+    .heritage-tile.casino-main p,
+    .heritage-tile.facade-side p,
+    .heritage-tile.street-side p,
+    .heritage-tile.terrace-band p {
+      min-height: auto;
+      display: block;
+      line-clamp: unset;
+      -webkit-line-clamp: unset;
+      -webkit-box-orient: initial;
+      overflow: visible;
     }
 
     .menu-preview {
@@ -736,14 +765,9 @@
 
       .heritage-grid {
         grid-template-columns: 1fr 1fr;
-      }
-
-      .heritage-tile.portrait {
-        grid-row: span 1;
-      }
-
-      .heritage-tile.terrace-large {
-        grid-column: span 2;
+        grid-template-areas:
+          "casino facade"
+          "street terrace";
       }
 
       .hero {
@@ -759,17 +783,14 @@
 
       .heritage-grid {
         grid-template-columns: 1fr;
+        grid-template-areas:
+          "casino"
+          "facade"
+          "street"
+          "terrace";
       }
 
-      .heritage-tile.terrace-large {
-        grid-column: span 1;
-      }
-
-      .heritage-tile.portrait img {
-        height: 260px;
-      }
-
-      .heritage-tile.terrace-large img {
+      .heritage-tile img {
         height: 260px;
       }
 
@@ -985,15 +1006,19 @@
       <h2 data-i18n="her-h2">Candelario Heritage</h2>
       <p class="section-intro" data-i18n="her-intro">Casino Mayor is rooted in its place. The restored building carries the stone architecture, mountain character, and cultural memory of Candelario.</p>
       <div class="heritage-grid">
-        <article class="heritage-tile portrait">
+        <article class="heritage-tile casino-main">
+          <img class="casino-full" src="images/Candelario Casino.jpg" alt="Interior view of Casino Mayor in Candelario" />
+          <p data-i18n="her-tile5">Casino Interior Atmosphere</p>
+        </article>
+        <article class="heritage-tile facade-side">
           <img class="facade-full" src="images/Historic Facade.png" alt="Historic facade in Candelario" />
           <p data-i18n="her-tile1">Historic Facade</p>
         </article>
-        <article class="heritage-tile portrait">
+        <article class="heritage-tile street-side">
           <img src="images/Candelario Mayor.jpg" alt="Stone street in Candelario" />
           <p data-i18n="her-tile2">Stone Street Character</p>
         </article>
-        <article class="heritage-tile terrace-large">
+        <article class="heritage-tile terrace-band">
           <img src="images/Candelario View.jpg" alt="Evening terrace in Candelario" />
           <p data-i18n="her-tile4">Evening Terrace Mood</p>
         </article>
@@ -1251,6 +1276,7 @@
         'her-tile1': 'Historic Facade',
         'her-tile2': 'Stone Street Character',
         'her-tile4': 'Evening Terrace Mood',
+        'her-tile5': 'Casino Interior Atmosphere',
         'din-h3-1': 'Dining &amp; Lounge',
         'din-p-1': 'Planned opening concept: seasonal plates and sharing formats for long evenings, paired with cocktails and bodega-led wine service.',
         'din-h3-2': "Chef's Table Nights",
@@ -1432,6 +1458,7 @@
         'her-tile1': 'Fachada Histórica',
         'her-tile2': 'El Carácter de la Calle Mayor',
         'her-tile4': 'Ambiente de Terraza Nocturna',
+        'her-tile5': 'Ambiente Interior del Casino',
         'din-h3-1': 'Gastronomía &amp; Lounge',
         'din-p-1': 'Concepto de apertura previsto: platos de temporada y formatos para compartir para veladas largas, con cócteles y servicio de vino liderado por la bodega.',
         'din-h3-2': 'Noches de la Mesa del Chef',
