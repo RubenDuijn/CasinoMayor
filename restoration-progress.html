@@ -481,6 +481,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
       align-items: start;
+      grid-auto-flow: dense;
     }
 
     .gallery-note {
@@ -518,9 +519,20 @@
       transform: scale(1.015);
     }
 
+    .photo-tile.portrait {
+      grid-row: span 2;
+    }
+
     .photo-tile.portrait img {
-      height: 440px;
+      height: 100%;
+      min-height: 540px;
+      object-fit: contain;
       object-position: center top;
+      background: radial-gradient(circle at top, rgba(37, 29, 43, 0.92), #120f14 70%);
+    }
+
+    .photo-tile.portrait:hover img {
+      transform: none;
     }
 
     .photo-caption {
@@ -753,8 +765,13 @@
         grid-template-columns: 1fr;
       }
 
+      .photo-tile.portrait {
+        grid-row: span 1;
+      }
+
       .photo-tile.portrait img {
-        height: 380px;
+        height: auto;
+        min-height: 420px;
       }
 
       .timeline-item {
