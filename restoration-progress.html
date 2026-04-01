@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Casino Mayor | Restoration Progress</title>
+  <meta name="description" content="Follow the restoration progress of Casino Mayor through current site photos and opening-vision comparisons." />
+  <meta name="theme-color" content="#130f14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #161317;
+      --surface: #201b22;
+      --surface-soft: #2a2330;
+      --gold: #d9b56f;
+      --gold-strong: #f0cd89;
+      --mist: #f4efe8;
+      --text: #efe9df;
+      --muted: #bcb3a8;
+      --line: #3a313f;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 10% -10%, #3b2d2a 0%, transparent 58%),
+        radial-gradient(900px 500px at 92% 6%, #2c2f49 0%, transparent 60%),
+        linear-gradient(180deg, #130f14 0%, #0f0b11 100%);
+      min-height: 100vh;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--gold-strong);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    .shell {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background: rgba(15, 11, 17, 0.74);
+      border-bottom: 1px solid rgba(217, 181, 111, 0.16);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      color: var(--mist);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: all 0.3s ease;
+    }
+
+    .brand:hover {
+      color: #fef4e4;
+      text-shadow: 0 0 12px rgba(240, 205, 137, 0.2);
+    }
+
+    .brand-dot {
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--gold-strong), #b89050);
+      box-shadow: 0 0 20px rgba(240, 205, 137, 0.5);
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.22rem;
+      width: 2.45rem;
+      height: 2.45rem;
+      border: 1px solid rgba(217, 181, 111, 0.3);
+      border-radius: 999px;
+      background: rgba(42, 35, 48, 0.48);
+      cursor: pointer;
+      padding: 0.45rem;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: #f0cd89;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .menu-toggle.is-open span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.is-open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.is-open span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .menu-toggle:hover {
+      border-color: var(--gold);
+      background: rgba(59, 44, 26, 0.5);
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      color: #d6ccc0;
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.35rem 0.2rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    nav a:hover {
+      color: #fff4dc;
+      border-bottom-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 0.3rem;
+      margin-left: 0.45rem;
+    }
+
+    .lang-toggle {
+      background: none;
+      border: 1px solid rgba(217, 181, 111, 0.3);
+      color: #9e9489;
+      font-family: "Manrope", sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.52rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lang-toggle.active {
+      color: #f0cd89;
+      border-color: rgba(217, 181, 111, 0.65);
+      background: rgba(59, 44, 26, 0.3);
+      box-shadow: 0 0 12px rgba(240, 205, 137, 0.15);
+    }
+
+    .lang-toggle:hover {
+      color: #fff4dc;
+      border-color: var(--gold);
+      background: rgba(59, 44, 26, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 4.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 1.7rem;
+      padding: 0 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(217, 181, 111, 0.35);
+      background: rgba(59, 44, 26, 0.22);
+      color: #d8c39d;
+      font-size: 0.76rem;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      margin: 0;
+      line-height: 1.06;
+      color: var(--mist);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-copy p,
+    .section-intro {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .section-intro {
+      margin: 0.3rem 0 1.1rem;
+      max-width: 72ch;
+    }
+
+    .hero-side {
+      background: linear-gradient(180deg, rgba(44, 35, 51, 0.76), rgba(31, 24, 36, 0.76));
+      border: 1px solid rgba(217, 181, 111, 0.22);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+      display: grid;
+      gap: 0.85rem;
+      align-content: start;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
+    }
+
+    .hero-side:hover {
+      transform: translateY(-3px);
+      border-color: rgba(217, 181, 111, 0.32);
+      box-shadow: 0 24px 46px rgba(0, 0, 0, 0.32);
+    }
+
+    .hero-side img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(217, 181, 111, 0.18);
+    }
+
+    .hero-side small {
+      display: block;
+      color: #cdb27c;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-side p { margin: 0; color: #d2c4b0; }
+
+    .section {
+      padding: 2.1rem 0;
+      scroll-margin-top: 90px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(42, 35, 48, 0.9), rgba(31, 26, 36, 0.9));
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217, 181, 111, 0.3);
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.28);
+    }
+
+    .card p { margin: 0.35rem 0 0; color: #baaf9f; line-height: 1.55; }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .compare-card {
+      background: rgba(24, 19, 30, 0.9);
+      border: 1px solid rgba(217, 181, 111, 0.2);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
+    }
+
+    .compare-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217, 181, 111, 0.3);
+      box-shadow: 0 22px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .compare-copy {
+      padding: 1rem 1rem 0.4rem;
+    }
+
+    .compare-copy h3 { font-size: 1.45rem; margin-bottom: 0.25rem; }
+    .compare-copy p { margin: 0; color: #baaf9f; line-height: 1.55; }
+
+    .compare-stage {
+      --split: 50%;
+      position: relative;
+      margin: 0.9rem 1rem 1rem;
+      height: 360px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(217, 181, 111, 0.16);
+      background: #120f14;
+    }
+
+    .compare-stage img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .compare-vision { z-index: 1; }
+
+    .compare-current {
+      z-index: 2;
+      clip-path: inset(0 calc(100% - var(--split)) 0 0);
+    }
+
+    .compare-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--split);
+      width: 2px;
+      background: linear-gradient(180deg, rgba(240, 205, 137, 0.96), rgba(240, 205, 137, 0.72));
+      z-index: 3;
+      box-shadow: 0 0 0 1px rgba(18, 13, 18, 0.2), 0 0 14px rgba(240, 205, 137, 0.18);
+      transform: translateX(-1px);
+    }
+
+    .compare-labels {
+      position: absolute;
+      inset: 0 0 auto 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.7rem;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .compare-label {
+      background: rgba(18, 13, 18, 0.68);
+      border: 1px solid rgba(217, 181, 111, 0.28);
+      color: #f0e1c6;
+      padding: 0.2rem 0.48rem;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .compare-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: calc(100% - 2rem);
+      height: 6px;
+      margin: 0 1rem 1rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(240, 205, 137, 0.95), rgba(124, 104, 75, 0.65));
+      box-shadow: inset 0 0 0 1px rgba(18, 13, 18, 0.26);
+      outline: none;
+      cursor: ew-resize;
+    }
+
+    .compare-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #f0cd89;
+      border: 2px solid #201b22;
+      box-shadow: 0 0 0 4px rgba(240, 205, 137, 0.14);
+    }
+
+    .compare-slider::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #f0cd89;
+      border: 2px solid #201b22;
+      box-shadow: 0 0 0 4px rgba(240, 205, 137, 0.14);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .photo-tile {
+      background: rgba(24, 19, 30, 0.9);
+      border: 1px solid rgba(217, 181, 111, 0.2);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
+    }
+
+    .photo-tile:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217, 181, 111, 0.3);
+      box-shadow: 0 20px 38px rgba(0, 0, 0, 0.28);
+    }
+
+    .photo-tile img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-caption {
+      padding: 0.8rem 0.9rem;
+      color: #d6c8b6;
+      background: linear-gradient(180deg, rgba(27, 21, 33, 0.94), rgba(22, 17, 27, 0.94));
+      border-top: 1px solid rgba(217, 181, 111, 0.16);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 1rem;
+      padding: 0.95rem 1rem;
+      background: linear-gradient(180deg, rgba(42, 35, 48, 0.88), rgba(31, 26, 36, 0.88));
+      border: 1px solid rgba(217, 181, 111, 0.16);
+      border-radius: 14px;
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
+    }
+
+    .timeline-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(217, 181, 111, 0.28);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.24);
+    }
+
+    .timeline-date {
+      color: var(--gold);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .timeline-item p { margin: 0.2rem 0 0; color: #baaf9f; }
+
+    .cta-box {
+      background: linear-gradient(120deg, rgba(43, 30, 37, 0.9), rgba(28, 24, 40, 0.9));
+      border: 1px solid rgba(217, 181, 111, 0.22);
+      border-radius: 16px;
+      padding: 1.2rem;
+      display: grid;
+      gap: 0.8rem;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
+    }
+
+    .cta-box:hover {
+      transform: translateY(-3px);
+      border-color: rgba(217, 181, 111, 0.3);
+      box-shadow: 0 24px 44px rgba(0, 0, 0, 0.28);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 0.62rem 1.1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .button.primary {
+      color: #1d1510;
+      background: linear-gradient(180deg, #f2cf8d, #cca460);
+      box-shadow: 0 12px 24px rgba(213, 170, 99, 0.28);
+    }
+
+    .button.secondary {
+      color: var(--mist);
+      border: 1px solid rgba(217, 181, 111, 0.45);
+      background: rgba(42, 35, 48, 0.48);
+    }
+
+    .button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(213, 170, 99, 0.4);
+    }
+
+    .button.secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(52, 45, 58, 0.68);
+      border-color: rgba(217, 181, 111, 0.58);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      padding: 2rem 0 2.4rem;
+      color: #a89d91;
+      font-size: 0.86rem;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .compare-grid,
+      .photo-grid,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar-inner {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+        padding-top: 0.75rem;
+      }
+
+      nav.menu-open {
+        display: flex;
+      }
+
+      nav a {
+        width: 100%;
+        padding: 0.45rem 0;
+      }
+
+      .lang-switcher {
+        margin-left: 0;
+        padding-top: 0.15rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav { gap: 0.65rem; }
+      nav a { font-size: 0.82rem; }
+      .hero { padding-top: 3.5rem; }
+      .compare-stage { height: 260px; }
+      .photo-tile img { height: 240px; }
+      .hero-side img { height: 220px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-dot"></span>
+        <span>Casino Mayor</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="site-nav">
+        <a href="#overview" data-i18n="nav-overview">Overview</a>
+        <a href="#compare" data-i18n="nav-compare">Comparisons</a>
+        <a href="#gallery" data-i18n="nav-gallery">Gallery</a>
+        <a href="#timeline" data-i18n="nav-timeline">Timeline</a>
+        <a href="index.html" data-i18n="nav-back">Back to Main Site</a>
+        <div class="lang-switcher">
+          <button class="lang-toggle active" id="btn-en" onclick="setLang('en')">EN</button>
+          <button class="lang-toggle" id="btn-es" onclick="setLang('es')">ES</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero" id="overview">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-tags">
+            <span class="pill" data-i18n="hero-pill-1">Restoration Progress</span>
+            <span class="pill" data-i18n="hero-pill-2">Update · Q2 2026</span>
+            <span class="pill" data-i18n="hero-pill-3">Current Photos &amp; Vision</span>
+          </div>
+          <h1 data-i18n="hero-title">Tracking the restoration of Casino Mayor, quarter by quarter.</h1>
+          <p data-i18n="hero-text">This journal pairs real site photography with illustrative vision imagery to show how the building is evolving. It begins with two Q2 2026 comparison sets and is designed to expand as new areas are documented.</p>
+        </div>
+        <aside class="hero-side">
+          <div>
+            <small data-i18n="hero-side-label">Update note</small>
+            <p data-i18n="hero-side-text">The first release focuses on the theatre hall and first-floor salon. Exterior views, additional rooms, and milestone notes can be added over time.</p>
+          </div>
+          <img src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre condition at Casino Mayor" />
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cards">
+        <article class="card">
+          <h3 data-i18n="card-1-title">Documented Today</h3>
+          <p data-i18n="card-1-text">Real 2026 site photography keeps the page grounded in the building as it stands now.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="card-2-title">Opening Vision</h3>
+          <p data-i18n="card-2-text">Each paired concept image shows the intended atmosphere while remaining clearly illustrative.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="card-3-title">Quarterly Journal</h3>
+          <p data-i18n="card-3-text">The format is built to grow naturally as new photos, milestones, and updates arrive.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <h2 data-i18n="compare-title">Current / Vision Comparisons</h2>
+      <p class="section-intro" data-i18n="compare-intro">Each slider pairs a current 2026 photograph with the corresponding illustrative vision for the same space.</p>
+      <div class="compare-grid">
+        <article class="compare-card">
+          <div class="compare-copy">
+            <h3 data-i18n="compare-1-title">Theatre Hall</h3>
+            <p data-i18n="compare-1-text">The theatre hall as documented in 2026, set against the opening-vision image already used across the wider project.</p>
+          </div>
+          <div class="compare-stage" data-compare>
+            <img class="compare-vision" src="images/Candelario Theatre.png" alt="Illustrative future vision of the Casino Mayor theatre" />
+            <img class="compare-current" src="images/Candelario Theatre 2026.jpg" alt="Current 2026 condition of the Casino Mayor theatre" />
+            <div class="compare-divider" aria-hidden="true"></div>
+            <div class="compare-labels">
+              <span class="compare-label" data-i18n="label-current">Current 2026</span>
+              <span class="compare-label" data-i18n="label-vision">Illustrative Vision</span>
+            </div>
+          </div>
+          <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Compare current theatre photo with future vision" data-compare-slider />
+        </article>
+
+        <article class="compare-card">
+          <div class="compare-copy">
+            <h3 data-i18n="compare-2-title">First-Floor Salon</h3>
+            <p data-i18n="compare-2-text">The present salon condition compared with the intended finished atmosphere for the room above the main level.</p>
+          </div>
+          <div class="compare-stage" data-compare>
+            <img class="compare-vision" src="images/Candelario Casino.jpg" alt="Illustrative future vision of the first-floor salon at Casino Mayor" />
+            <img class="compare-current" src="images/Candelario Casino 2026.jpg" alt="Current 2026 condition of the first-floor salon at Casino Mayor" />
+            <div class="compare-divider" aria-hidden="true"></div>
+            <div class="compare-labels">
+              <span class="compare-label" data-i18n="label-current">Current 2026</span>
+              <span class="compare-label" data-i18n="label-vision">Illustrative Vision</span>
+            </div>
+          </div>
+          <input class="compare-slider" type="range" min="0" max="100" value="50" aria-label="Compare current salon photo with future vision" data-compare-slider />
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <h2 data-i18n="gallery-title">Current Site Photos</h2>
+      <p class="section-intro" data-i18n="gallery-intro">The gallery begins with the first two documented 2026 images and can expand with each future update.</p>
+      <div class="photo-grid">
+        <article class="photo-tile">
+          <img src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre view at Casino Mayor" />
+          <div class="photo-caption" data-i18n="gallery-1-caption">Theatre hall · documented site condition in 2026</div>
+        </article>
+        <article class="photo-tile">
+          <img src="images/Candelario Casino 2026.jpg" alt="Current 2026 first-floor salon view at Casino Mayor" />
+          <div class="photo-caption" data-i18n="gallery-2-caption">First-floor salon · documented site condition in 2026</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="timeline">
+      <h2 data-i18n="timeline-title">Project Timeline</h2>
+      <p class="section-intro" data-i18n="timeline-intro">This journal is designed for regular milestone updates without reshaping the main site.</p>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline-1-date">Q2 2026</div>
+          <div>
+            <h3 data-i18n="timeline-1-title">First Published Update</h3>
+            <p data-i18n="timeline-1-text">The first comparison sets establish a clear present-to-vision narrative for the restoration.</p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline-2-date">Future updates</div>
+          <div>
+            <h3 data-i18n="timeline-2-title">Additional Rooms, Exterior Views &amp; Milestones</h3>
+            <p data-i18n="timeline-2-text">Later quarterly updates can add more spaces, more before/vision pairs, and short notes on major restoration steps.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta-box">
+        <h2 data-i18n="cta-title">A dedicated place to follow the restoration story.</h2>
+        <p class="section-intro" style="margin: 0; max-width: none;" data-i18n="cta-text">The main homepage remains focused on the destination and opening vision, while this journal quietly documents the real progress of the building over time.</p>
+        <div class="cta-row">
+          <a class="button primary" href="index.html" data-i18n="cta-back">Return to Main Site</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span data-i18n="footer">Casino Mayor · Restoration Progress · Candelario, Spain</span>
+  </footer>
+
+  <script>
+    const t = {
+      en: {
+        'nav-overview': 'Overview',
+        'nav-compare': 'Comparisons',
+        'nav-gallery': 'Gallery',
+        'nav-timeline': 'Timeline',
+        'nav-back': 'Back to Main Site',
+        'hero-pill-1': 'Restoration Progress',
+        'hero-pill-2': 'Update · Q2 2026',
+        'hero-pill-3': 'Current Photos & Vision',
+        'hero-title': 'Tracking the restoration of Casino Mayor, quarter by quarter.',
+        'hero-text': 'This journal pairs real site photography with illustrative vision imagery to show how the building is evolving. It begins with two Q2 2026 comparison sets and is designed to expand as new areas are documented.',
+        'hero-side-label': 'Update note',
+        'hero-side-text': 'The first release focuses on the theatre hall and first-floor salon. Exterior views, additional rooms, and milestone notes can be added over time.',
+        'card-1-title': 'Documented Today',
+        'card-1-text': 'Real 2026 site photography keeps the page grounded in the building as it stands now.',
+        'card-2-title': 'Opening Vision',
+        'card-2-text': 'Each paired concept image shows the intended atmosphere while remaining clearly illustrative.',
+        'card-3-title': 'Quarterly Journal',
+        'card-3-text': 'The format is built to grow naturally as new photos, milestones, and updates arrive.',
+        'compare-title': 'Current / Vision Comparisons',
+        'compare-intro': 'Each slider pairs a current 2026 photograph with the corresponding illustrative vision for the same space.',
+        'compare-1-title': 'Theatre Hall',
+        'compare-1-text': 'The theatre hall as documented in 2026, set against the opening-vision image already used across the wider project.',
+        'compare-2-title': 'First-Floor Salon',
+        'compare-2-text': 'The present salon condition compared with the intended finished atmosphere for the room above the main level.',
+        'label-current': 'Current 2026',
+        'label-vision': 'Illustrative Vision',
+        'gallery-title': 'Current Site Photos',
+        'gallery-intro': 'The gallery begins with the first two documented 2026 images and can expand with each future update.',
+        'gallery-1-caption': 'Theatre hall · documented site condition in 2026',
+        'gallery-2-caption': 'First-floor salon · documented site condition in 2026',
+        'timeline-title': 'Project Timeline',
+        'timeline-intro': 'This journal is designed for regular milestone updates without reshaping the main site.',
+        'timeline-1-date': 'Q2 2026',
+        'timeline-1-title': 'First Published Update',
+        'timeline-1-text': 'The first comparison sets establish a clear present-to-vision narrative for the restoration.',
+        'timeline-2-date': 'Future updates',
+        'timeline-2-title': 'Additional Rooms, Exterior Views & Milestones',
+        'timeline-2-text': 'Later quarterly updates can add more spaces, more before/vision pairs, and short notes on major restoration steps.',
+        'cta-title': 'A dedicated place to follow the restoration story.',
+        'cta-text': 'The main homepage remains focused on the destination and opening vision, while this journal quietly documents the real progress of the building over time.',
+        'cta-back': 'Return to Main Site',
+        'footer': 'Casino Mayor · Restoration Progress · Candelario, Spain'
+      },
+      es: {
+        'nav-overview': 'Resumen',
+        'nav-compare': 'Comparativas',
+        'nav-gallery': 'Galería',
+        'nav-timeline': 'Cronología',
+        'nav-back': 'Volver al Sitio Principal',
+        'hero-pill-1': 'Progreso de la Restauración',
+        'hero-pill-2': 'Actualización · Q2 2026',
+        'hero-pill-3': 'Fotos Actuales y Visión',
+        'hero-title': 'Siguiendo la restauración de Casino Mayor, trimestre a trimestre.',
+        'hero-text': 'Este diario combina fotografía real del edificio con imágenes ilustrativas de visión para mostrar cómo evoluciona el proyecto. Comienza con dos comparativas de Q2 2026 y está pensado para crecer a medida que se documenten nuevas zonas.',
+        'hero-side-label': 'Nota de actualización',
+        'hero-side-text': 'La primera versión se centra en la sala del teatro y el salón de la primera planta. Con el tiempo se podrán añadir vistas exteriores, más salas y nuevas notas de obra.',
+        'card-1-title': 'Situación Documentada',
+        'card-1-text': 'La fotografía real de 2026 mantiene la página anclada en el estado actual del edificio.',
+        'card-2-title': 'Visión de Apertura',
+        'card-2-text': 'Cada imagen conceptual muestra la atmósfera prevista, dejando claro que se trata de una referencia ilustrativa.',
+        'card-3-title': 'Diario Trimestral',
+        'card-3-text': 'El formato está preparado para crecer con nuevas fotos, hitos y actualizaciones.',
+        'compare-title': 'Comparativas de Estado Actual / Visión',
+        'compare-intro': 'Cada deslizador empareja una fotografía real de 2026 con la visión ilustrativa correspondiente del mismo espacio.',
+        'compare-1-title': 'Sala del Teatro',
+        'compare-1-text': 'La sala del teatro tal como fue documentada en 2026, frente a la imagen de visión de apertura ya utilizada en el relato general del proyecto.',
+        'compare-2-title': 'Salón de la Primera Planta',
+        'compare-2-text': 'El estado actual del salón comparado con la atmósfera final prevista para la sala situada sobre el nivel principal.',
+        'label-current': 'Estado 2026',
+        'label-vision': 'Visión Ilustrativa',
+        'gallery-title': 'Fotos Actuales del Espacio',
+        'gallery-intro': 'La galería arranca con las primeras dos imágenes documentadas en 2026 y puede ampliarse con cada futura actualización.',
+        'gallery-1-caption': 'Sala del teatro · estado del espacio documentado en 2026',
+        'gallery-2-caption': 'Salón de la primera planta · estado del espacio documentado en 2026',
+        'timeline-title': 'Cronología del Proyecto',
+        'timeline-intro': 'Este diario está diseñado para incorporar hitos regulares sin necesidad de rehacer la página principal.',
+        'timeline-1-date': 'Q2 2026',
+        'timeline-1-title': 'Primera Actualización Publicada',
+        'timeline-1-text': 'Las primeras comparativas establecen una narrativa clara entre el estado actual y la visión futura de la restauración.',
+        'timeline-2-date': 'Próximas actualizaciones',
+        'timeline-2-title': 'Más Salas, Vistas Exteriores e Hitos',
+        'timeline-2-text': 'Las futuras actualizaciones trimestrales podrán añadir más espacios, más pares antes/visión y notas breves sobre los principales avances de la obra.',
+        'cta-title': 'Un lugar dedicado a seguir la historia de la restauración.',
+        'cta-text': 'La página principal puede seguir centrada en el destino y la visión de apertura, mientras este diario documenta con discreción el progreso real del edificio a lo largo del tiempo.',
+        'cta-back': 'Volver al Sitio Principal',
+        'footer': 'Casino Mayor · Progreso de la Restauración · Candelario, España'
+      }
+    };
+
+    function setLang(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (t[lang] && t[lang][key] !== undefined) {
+          el.innerHTML = t[lang][key];
+        }
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.documentElement.lang = lang;
+      try { localStorage.setItem('cm-progress-lang', lang); } catch(e) {}
+    }
+
+    function initMenuToggle() {
+      var toggle = document.getElementById('menu-toggle');
+      var nav = document.getElementById('site-nav');
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener('click', function() {
+        var open = nav.classList.toggle('menu-open');
+        toggle.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+
+      nav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 860) {
+            nav.classList.remove('menu-open');
+            toggle.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+
+    document.querySelectorAll('[data-compare-slider]').forEach(function(slider) {
+      slider.addEventListener('input', function() {
+        var stage = slider.previousElementSibling;
+        if (stage) stage.style.setProperty('--split', slider.value + '%');
+      });
+    });
+
+    (function() {
+      var saved;
+      try { saved = localStorage.getItem('cm-progress-lang'); } catch(e) {}
+      setLang(saved || 'en');
+      initMenuToggle();
+    })();
+  </script>
+</body>
+</html>
