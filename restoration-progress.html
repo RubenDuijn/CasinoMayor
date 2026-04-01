@@ -270,6 +270,14 @@
       background: #18131a;
     }
 
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 8, 12, 0.04), rgba(10, 8, 12, 0.14));
+      pointer-events: none;
+    }
+
     .hero-visual img {
       position: absolute;
       inset: 0;
@@ -310,18 +318,21 @@
 
     .hero-visual-badge {
       position: absolute;
-      top: 0.7rem;
-      right: 0.7rem;
+      top: 0.8rem;
+      right: 0.8rem;
       z-index: 2;
-      padding: 0.26rem 0.5rem;
+      padding: 0.34rem 0.68rem;
       border-radius: 999px;
-      background: rgba(15, 11, 17, 0.54);
-      border: 1px solid rgba(217, 181, 111, 0.18);
-      color: #e8d3ac;
-      font-size: 0.63rem;
-      letter-spacing: 0.08em;
+      background: linear-gradient(180deg, rgba(24, 19, 30, 0.76), rgba(15, 11, 17, 0.64));
+      border: 1px solid rgba(217, 181, 111, 0.24);
+      color: #f0dec0;
+      font-size: 0.61rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
-      opacity: 0.88;
+      opacity: 0.94;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(6px);
     }
 
     .hero-side small {
@@ -904,7 +915,7 @@
           <div class="hero-visual" id="hero-visual" tabindex="0" aria-label="Current theatre image with a subtle vision preview on hover">
             <img class="hero-image-current" src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre condition at Casino Mayor" />
             <img class="hero-image-vision" src="images/Candelario Theatre.png" alt="Illustrative future vision of the Casino Mayor theatre" />
-            <span class="hero-visual-badge" data-i18n="hero-hover-hint">Current ↔ Vision</span>
+            <span class="hero-visual-badge" data-i18n="hero-hover-hint">Preview vision</span>
           </div>
         </aside>
       </div>
@@ -1079,7 +1090,7 @@
         'hero-text': 'This restoration journal follows Casino Mayor as it stands in 2026, pairing current photographs with illustrative vision images to show both the building today and the direction of the work ahead.',
         'hero-side-label': 'Update note',
         'hero-side-text': 'The roof is the first major priority, followed by the careful restoration of the interior spaces. New photographs and milestone notes will follow as Casino Mayor continues to recover.',
-        'hero-hover-hint': 'Current ↔ Vision',
+        'hero-hover-hint': 'Preview vision',
         'card-1-title': 'Documented Today',
         'card-1-text': 'Real 2026 photography keeps the story of Casino Mayor grounded in the building as it stands today.',
         'card-2-title': 'Opening Vision',
@@ -1140,7 +1151,7 @@
         'hero-text': 'Este diario de restauración sigue a Casino Mayor tal como se encuentra en 2026, combinando fotografías actuales con imágenes ilustrativas de visión para mostrar tanto el estado real del edificio como la dirección de los trabajos.',
         'hero-side-label': 'Nota de actualización',
         'hero-side-text': 'La cubierta es la primera gran prioridad, seguida de la restauración cuidadosa de los espacios interiores. Se irán sumando nuevas fotografías y notas de avance a medida que avance la recuperación de Casino Mayor.',
-        'hero-hover-hint': 'Actual ↔ Visión',
+        'hero-hover-hint': 'Vista previa',
         'card-1-title': 'Situación Documentada',
         'card-1-text': 'La fotografía real de 2026 mantiene la historia de Casino Mayor anclada en el estado actual del edificio.',
         'card-2-title': 'Visión de Apertura',
