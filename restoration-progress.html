@@ -266,9 +266,8 @@
       height: 280px;
       overflow: hidden;
       border-radius: 12px;
-      border: 1px solid rgba(217, 181, 111, 0.18);
+      border: 1px solid rgba(217, 181, 111, 0.16);
       background: #18131a;
-      cursor: pointer;
     }
 
     .hero-visual img {
@@ -277,40 +276,44 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 0.45s ease, transform 0.45s ease;
+      transition: opacity 0.6s ease;
+    }
+
+    .hero-image-current {
+      opacity: 1;
     }
 
     .hero-image-vision {
       opacity: 0;
-      transform: scale(1.02);
+      filter: saturate(0.96) brightness(0.98);
     }
 
     .hero-visual:hover .hero-image-vision,
     .hero-visual:focus-within .hero-image-vision,
     .hero-visual.is-flipped .hero-image-vision {
-      opacity: 1;
-      transform: scale(1);
+      opacity: 0.88;
     }
 
     .hero-visual:hover .hero-image-current,
     .hero-visual:focus-within .hero-image-current,
     .hero-visual.is-flipped .hero-image-current {
-      opacity: 0;
+      opacity: 0.18;
     }
 
     .hero-visual-badge {
       position: absolute;
-      left: 0.75rem;
-      bottom: 0.75rem;
+      top: 0.7rem;
+      right: 0.7rem;
       z-index: 2;
-      padding: 0.35rem 0.6rem;
+      padding: 0.26rem 0.5rem;
       border-radius: 999px;
-      background: rgba(15, 11, 17, 0.72);
-      border: 1px solid rgba(217, 181, 111, 0.28);
-      color: #f1ddba;
-      font-size: 0.7rem;
-      letter-spacing: 0.06em;
+      background: rgba(15, 11, 17, 0.54);
+      border: 1px solid rgba(217, 181, 111, 0.18);
+      color: #e8d3ac;
+      font-size: 0.63rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      opacity: 0.88;
     }
 
     .hero-side small {
@@ -777,10 +780,10 @@
             <small data-i18n="hero-side-label">Update note</small>
             <p data-i18n="hero-side-text">The roof is the first major priority, followed by the careful restoration of the interior spaces. New photographs and milestone notes will be added here as the work continues.</p>
           </div>
-          <div class="hero-visual" id="hero-visual" tabindex="0" aria-label="Hover to preview the vision">
+          <div class="hero-visual" id="hero-visual" tabindex="0" aria-label="Current theatre image with a subtle vision preview on hover">
             <img class="hero-image-current" src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre condition at Casino Mayor" />
             <img class="hero-image-vision" src="images/Candelario Theatre.png" alt="Illustrative future vision of the Casino Mayor theatre" />
-            <span class="hero-visual-badge" data-i18n="hero-hover-hint">Hover to preview the vision</span>
+            <span class="hero-visual-badge" data-i18n="hero-hover-hint">Current ↔ Vision</span>
           </div>
         </aside>
       </div>
@@ -845,15 +848,23 @@
 
     <section class="section" id="gallery">
       <h2 data-i18n="gallery-title">Current Site Photos</h2>
-      <p class="section-intro" data-i18n="gallery-intro">The gallery begins with the first two documented 2026 images and can expand with each future update.</p>
+      <p class="section-intro" data-i18n="gallery-intro">The gallery gathers a growing set of documented 2026 views and can expand with each future update.</p>
       <div class="photo-grid">
         <article class="photo-tile">
-          <img src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre view at Casino Mayor" />
+          <img src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre view at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-1-caption">Theatre hall · documented site condition in 2026</div>
         </article>
         <article class="photo-tile">
-          <img src="images/Candelario Casino 2026.jpg" alt="Current 2026 first-floor salon view at Casino Mayor" />
+          <img src="images/Candelario Casino 2026.jpg" alt="Current 2026 first-floor salon view at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-2-caption">First-floor salon · documented site condition in 2026</div>
+        </article>
+        <article class="photo-tile">
+          <img src="images/Candelario Theatre Stage 2026.jpg" alt="Current 2026 view of the theatre stage at Casino Mayor" loading="lazy" />
+          <div class="photo-caption" data-i18n="gallery-3-caption">Theatre stage · current restoration view in 2026</div>
+        </article>
+        <article class="photo-tile">
+          <img src="images/Candelario Theatre 2026 II.jpg" alt="Alternate 2026 theatre view at Casino Mayor" loading="lazy" />
+          <div class="photo-caption" data-i18n="gallery-4-caption">Theatre hall · alternate documented view in 2026</div>
         </article>
       </div>
     </section>
@@ -898,7 +909,7 @@
           </div>
         </article>
         <article class="support-panel support-photo">
-          <img src="images/Candelario Casino Mayor roof 2026.jpg" alt="Roof condition at Casino Mayor in 2026" />
+          <img src="images/Candelario Casino Mayor roof 2026.jpg" alt="Roof condition at Casino Mayor in 2026" loading="lazy" />
           <div class="support-photo-copy">
             <h3 data-i18n="support-photo-title">Roof condition · 2026</h3>
             <p data-i18n="support-photo-text">This 2026 roof view offers a clear sense of why this first phase matters so much to the future of Casino Mayor.</p>
@@ -938,7 +949,7 @@
         'hero-text': 'This page offers a transparent look at the ongoing restoration of Casino Mayor, pairing current 2026 photographs with illustrative vision images to show both the building as it stands today and the direction of the project.',
         'hero-side-label': 'Update note',
         'hero-side-text': 'The roof is the first major priority, followed by the careful restoration of the interior spaces. New photographs and milestone notes will be added here as the work continues.',
-        'hero-hover-hint': 'Hover to preview the vision',
+        'hero-hover-hint': 'Current ↔ Vision',
         'card-1-title': 'Documented Today',
         'card-1-text': 'Real 2026 site photography keeps the page grounded in the building as it stands now.',
         'card-2-title': 'Opening Vision',
@@ -954,9 +965,11 @@
         'label-current': 'Current 2026',
         'label-vision': 'Illustrative Vision',
         'gallery-title': 'Current Site Photos',
-        'gallery-intro': 'The gallery begins with the first two documented 2026 images and can expand with each future update.',
+        'gallery-intro': 'The gallery gathers a growing set of documented 2026 views and can expand with each future update.',
         'gallery-1-caption': 'Theatre hall · documented site condition in 2026',
         'gallery-2-caption': 'First-floor salon · documented site condition in 2026',
+        'gallery-3-caption': 'Theatre stage · current restoration view in 2026',
+        'gallery-4-caption': 'Theatre hall · alternate documented view in 2026',
         'timeline-title': 'Project Timeline',
         'timeline-intro': 'This page will continue to record key milestones as the restoration moves forward, beginning with the roof.',
         'timeline-1-date': 'Q2 2026',
@@ -996,7 +1009,7 @@
         'hero-text': 'Esta página ofrece una mirada transparente a la restauración en curso de Casino Mayor, combinando fotografías reales de 2026 con imágenes ilustrativas de visión para mostrar tanto el estado actual del edificio como la dirección del proyecto.',
         'hero-side-label': 'Nota de actualización',
         'hero-side-text': 'La cubierta es la primera gran prioridad, seguida de la restauración cuidadosa de los espacios interiores. Aquí se irán añadiendo nuevas fotografías y notas de avance a medida que continúe la obra.',
-        'hero-hover-hint': 'Pase el cursor para ver la visión',
+        'hero-hover-hint': 'Actual ↔ Visión',
         'card-1-title': 'Situación Documentada',
         'card-1-text': 'La fotografía real de 2026 mantiene la página anclada en el estado actual del edificio.',
         'card-2-title': 'Visión de Apertura',
@@ -1012,9 +1025,11 @@
         'label-current': 'Estado 2026',
         'label-vision': 'Visión Ilustrativa',
         'gallery-title': 'Fotos Actuales del Espacio',
-        'gallery-intro': 'La galería arranca con las primeras dos imágenes documentadas en 2026 y puede ampliarse con cada futura actualización.',
+        'gallery-intro': 'La galería reúne una selección creciente de vistas documentadas en 2026 y puede ampliarse con cada futura actualización.',
         'gallery-1-caption': 'Sala del teatro · estado del espacio documentado en 2026',
         'gallery-2-caption': 'Salón de la primera planta · estado del espacio documentado en 2026',
+        'gallery-3-caption': 'Escenario del teatro · vista actual de la restauración en 2026',
+        'gallery-4-caption': 'Sala del teatro · vista documentada alternativa en 2026',
         'timeline-title': 'Cronología del Proyecto',
         'timeline-intro': 'Esta página seguirá recogiendo los hitos principales de la restauración, comenzando por la cubierta.',
         'timeline-1-date': 'Q2 2026',
