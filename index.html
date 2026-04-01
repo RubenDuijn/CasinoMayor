@@ -1208,7 +1208,7 @@
         <a href="#dining" data-i18n="nav-dining">Dining</a>
         <a href="#agenda" data-i18n="nav-agenda">Agenda</a>
         <a href="#events" data-i18n="nav-events">Events</a>
-        <a href="restoration-progress.html" data-i18n="nav-progress">Progress</a>
+        <a href="restoration-progress.html" data-i18n="nav-progress">Restoration</a>
         <a href="#visit" data-i18n="nav-visit">Visit</a>
         <div class="lang-switcher">
           <button class="lang-toggle active" id="btn-en" onclick="setLang('en')">EN</button>
@@ -1528,7 +1528,7 @@
         'nav-dining': 'Dining',
         'nav-agenda': 'Agenda',
         'nav-events': 'Events',
-        'nav-progress': 'Progress',
+        'nav-progress': 'Restoration',
         'nav-visit': 'Visit',
         'hero-kicker': 'Candelario Heritage',
         'hero-plan-tag': 'Grand Opening · Q4 2027',
@@ -1714,7 +1714,7 @@
         'nav-dining': 'Gastronomía',
         'nav-agenda': 'Agenda',
         'nav-events': 'Eventos',
-        'nav-progress': 'Progreso',
+        'nav-progress': 'Restauración',
         'nav-visit': 'Visítanos',
         'hero-kicker': 'Patrimonio de Candelario',
         'hero-plan-tag': 'Gran Apertura · Q4 2027',
@@ -1906,7 +1906,10 @@
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
       document.documentElement.lang = lang;
-      try { localStorage.setItem('cm-lang', lang); } catch(e) {}
+      try {
+        localStorage.setItem('cm-lang', lang);
+        localStorage.setItem('cm-progress-lang', lang);
+      } catch(e) {}
     }
 
     function initMenuToggle() {
@@ -1933,7 +1936,7 @@
 
     (function() {
       var saved;
-      try { saved = localStorage.getItem('cm-lang'); } catch(e) {}
+      try { saved = localStorage.getItem('cm-lang') || localStorage.getItem('cm-progress-lang'); } catch(e) {}
       setLang(saved || 'en');
       initMenuToggle();
     })();
