@@ -521,7 +521,7 @@
     }
 
     .photo-tile.stage-view img {
-      height: 520px;
+      height: 360px;
       object-fit: contain;
       object-position: center top;
       background: radial-gradient(circle at top, rgba(37, 29, 43, 0.92), #120f14 70%);
@@ -530,6 +530,10 @@
 
     .photo-tile.stage-view:hover img {
       transform: none;
+    }
+
+    .photo-tile.theatre img {
+      object-position: center 34%;
     }
 
     .photo-tile.attic img {
@@ -586,8 +590,9 @@
 
     .lightbox-image {
       width: 100%;
-      max-height: 76vh;
+      max-height: 82vh;
       object-fit: contain;
+      object-position: center;
       display: block;
       border-radius: 12px;
       background: #0f0b11;
@@ -767,7 +772,7 @@
       }
 
       .photo-tile.stage-view img {
-        height: 440px;
+        height: 380px;
       }
 
       .timeline-item {
@@ -944,6 +949,14 @@
       <p class="section-intro" data-i18n="gallery-intro">These documented 2026 views of Casino Mayor can continue to grow with each future update.</p>
       <p class="gallery-note" data-i18n="gallery-note">Click or tap any image to enlarge it.</p>
       <div class="photo-grid">
+        <article class="photo-tile theatre" data-lightbox-trigger tabindex="0" role="button">
+          <img src="images/Candelario Theatre 2026 II.jpg" alt="Alternate 2026 theatre view at Casino Mayor" loading="lazy" />
+          <div class="photo-caption" data-i18n="gallery-4-caption">Theatre hall · alternate documented view in 2026</div>
+        </article>
+        <article class="photo-tile attic" data-lightbox-trigger tabindex="0" role="button">
+          <img src="images/Candelario Atico 2026.jpg" alt="Current 2026 attic view at Casino Mayor" loading="lazy" />
+          <div class="photo-caption" data-i18n="gallery-3-caption">Attic level · documented condition in 2026</div>
+        </article>
         <article class="photo-tile stage-view" data-lightbox-trigger tabindex="0" role="button">
           <img src="images/Candelario Theatre Stage L 2026.jpg" alt="Current 2026 view of the left side of the theatre stage at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-1-caption">Theatre stage · left side facing the stage · 2026</div>
@@ -951,14 +964,6 @@
         <article class="photo-tile stage-view" data-lightbox-trigger tabindex="0" role="button">
           <img src="images/Candelario Theatre Stage R 2026.jpg" alt="Current 2026 view of the right side of the theatre stage at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-2-caption">Theatre stage · right side facing the stage · 2026</div>
-        </article>
-        <article class="photo-tile attic" data-lightbox-trigger tabindex="0" role="button">
-          <img src="images/Candelario Atico 2026.jpg" alt="Current 2026 attic view at Casino Mayor" loading="lazy" />
-          <div class="photo-caption" data-i18n="gallery-3-caption">Attic level · documented condition in 2026</div>
-        </article>
-        <article class="photo-tile" data-lightbox-trigger tabindex="0" role="button">
-          <img src="images/Candelario Theatre 2026 II.jpg" alt="Alternate 2026 theatre view at Casino Mayor" loading="lazy" />
-          <div class="photo-caption" data-i18n="gallery-4-caption">Theatre hall · alternate documented view in 2026</div>
         </article>
       </div>
     </section>
