@@ -288,16 +288,24 @@
       filter: saturate(0.96) brightness(0.98);
     }
 
-    .hero-visual:hover .hero-image-vision,
-    .hero-visual:focus-within .hero-image-vision,
     .hero-visual.is-flipped .hero-image-vision {
       opacity: 0.88;
     }
 
-    .hero-visual:hover .hero-image-current,
-    .hero-visual:focus-within .hero-image-current,
     .hero-visual.is-flipped .hero-image-current {
       opacity: 0.18;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .hero-visual:hover .hero-image-vision,
+      .hero-visual:focus-visible .hero-image-vision {
+        opacity: 0.88;
+      }
+
+      .hero-visual:hover .hero-image-current,
+      .hero-visual:focus-visible .hero-image-current {
+        opacity: 0.18;
+      }
     }
 
     .hero-visual-badge {
@@ -1223,8 +1231,21 @@
       var visual = document.getElementById('hero-visual');
       if (!visual) return;
 
-      visual.addEventListener('click', function() {
-        if (window.matchMedia('(hover: none)').matches) {
+      function isTouchMode() {
+        return window.matchMedia('(hover: none), (pointer: coarse)').matches;
+      }
+
+      visual.addEventListener('click', function(event) {
+        if (isTouchMode()) {
+          event.preventDefault();
+          visual.classList.toggle('is-flipped');
+          visual.blur();
+        }
+      });
+
+      visual.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
           visual.classList.toggle('is-flipped');
         }
       });
