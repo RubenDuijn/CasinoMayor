@@ -478,10 +478,9 @@
 
     .photo-grid {
       display: grid;
-      grid-template-columns: minmax(250px, 0.82fr) minmax(0, 1.18fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
       align-items: start;
-      grid-auto-flow: dense;
     }
 
     .gallery-note {
@@ -521,30 +520,20 @@
       transform: scale(1.015);
     }
 
-    .photo-tile.portrait {
-      grid-row: span 2;
-    }
-
-    .photo-tile.portrait img {
-      height: 100%;
-      min-height: 660px;
+    .photo-tile.stage-view img {
+      height: 520px;
       object-fit: contain;
       object-position: center top;
       background: radial-gradient(circle at top, rgba(37, 29, 43, 0.92), #120f14 70%);
       padding: 0.35rem;
     }
 
-    .photo-tile.portrait:hover img {
+    .photo-tile.stage-view:hover img {
       transform: none;
     }
 
-    .photo-tile.wide {
-      grid-column: 1 / -1;
-    }
-
-    .photo-tile.wide img {
-      height: 280px;
-      object-position: center 38%;
+    .photo-tile.attic img {
+      object-position: center top;
     }
 
     .photo-caption {
@@ -777,19 +766,8 @@
         grid-template-columns: 1fr;
       }
 
-      .photo-tile.portrait,
-      .photo-tile.wide {
-        grid-row: span 1;
-        grid-column: auto;
-      }
-
-      .photo-tile.portrait img {
-        height: auto;
-        min-height: 460px;
-      }
-
-      .photo-tile.wide img {
-        height: 300px;
+      .photo-tile.stage-view img {
+        height: 440px;
       }
 
       .timeline-item {
@@ -966,19 +944,19 @@
       <p class="section-intro" data-i18n="gallery-intro">These documented 2026 views of Casino Mayor can continue to grow with each future update.</p>
       <p class="gallery-note" data-i18n="gallery-note">Click or tap any image to enlarge it.</p>
       <div class="photo-grid">
-        <article class="photo-tile portrait" data-lightbox-trigger tabindex="0" role="button">
-          <img src="images/Candelario Theatre Stage 2026.jpg" alt="Current 2026 view of the theatre stage at Casino Mayor" loading="lazy" />
-          <div class="photo-caption" data-i18n="gallery-3-caption">Theatre stage · current restoration view in 2026</div>
+        <article class="photo-tile stage-view" data-lightbox-trigger tabindex="0" role="button">
+          <img src="images/Candelario Theatre Stage L 2026.jpg" alt="Current 2026 view of the left side of the theatre stage at Casino Mayor" loading="lazy" />
+          <div class="photo-caption" data-i18n="gallery-1-caption">Theatre stage · left side facing the stage · 2026</div>
+        </article>
+        <article class="photo-tile stage-view" data-lightbox-trigger tabindex="0" role="button">
+          <img src="images/Candelario Theatre Stage R 2026.jpg" alt="Current 2026 view of the right side of the theatre stage at Casino Mayor" loading="lazy" />
+          <div class="photo-caption" data-i18n="gallery-2-caption">Theatre stage · right side facing the stage · 2026</div>
+        </article>
+        <article class="photo-tile attic" data-lightbox-trigger tabindex="0" role="button">
+          <img src="images/Candelario Atico 2026.jpg" alt="Current 2026 attic view at Casino Mayor" loading="lazy" />
+          <div class="photo-caption" data-i18n="gallery-3-caption">Attic level · documented condition in 2026</div>
         </article>
         <article class="photo-tile" data-lightbox-trigger tabindex="0" role="button">
-          <img src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre view at Casino Mayor" loading="lazy" />
-          <div class="photo-caption" data-i18n="gallery-1-caption">Theatre hall · documented site condition in 2026</div>
-        </article>
-        <article class="photo-tile" data-lightbox-trigger tabindex="0" role="button">
-          <img src="images/Candelario Casino 2026.jpg" alt="Current 2026 first-floor salon view at Casino Mayor" loading="lazy" />
-          <div class="photo-caption" data-i18n="gallery-2-caption">First-floor salon · documented site condition in 2026</div>
-        </article>
-        <article class="photo-tile wide" data-lightbox-trigger tabindex="0" role="button">
           <img src="images/Candelario Theatre 2026 II.jpg" alt="Alternate 2026 theatre view at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-4-caption">Theatre hall · alternate documented view in 2026</div>
         </article>
@@ -1091,9 +1069,9 @@
         'gallery-title': 'Current Site Photos',
         'gallery-intro': 'These documented 2026 views of Casino Mayor can continue to grow with each future update.',
         'gallery-note': 'Click or tap any image to enlarge it.',
-        'gallery-1-caption': 'Theatre hall · documented site condition in 2026',
-        'gallery-2-caption': 'First-floor salon · documented site condition in 2026',
-        'gallery-3-caption': 'Theatre stage · current restoration view in 2026',
+        'gallery-1-caption': 'Theatre stage · left side facing the stage · 2026',
+        'gallery-2-caption': 'Theatre stage · right side facing the stage · 2026',
+        'gallery-3-caption': 'Attic level · documented condition in 2026',
         'gallery-4-caption': 'Theatre hall · alternate documented view in 2026',
         'timeline-title': 'Project Timeline',
         'timeline-intro': 'This restoration journal will continue to record key milestones for Casino Mayor as the work moves forward, beginning with the roof.',
@@ -1152,9 +1130,9 @@
         'gallery-title': 'Fotos Actuales del Espacio',
         'gallery-intro': 'Estas vistas documentadas de Casino Mayor en 2026 podrán ampliarse con cada futura actualización.',
         'gallery-note': 'Pulse o haga clic en cualquier imagen para verla en mayor tamaño.',
-        'gallery-1-caption': 'Sala del teatro · estado del espacio documentado en 2026',
-        'gallery-2-caption': 'Salón de la primera planta · estado del espacio documentado en 2026',
-        'gallery-3-caption': 'Escenario del teatro · vista actual de la restauración en 2026',
+        'gallery-1-caption': 'Escenario del teatro · lado izquierdo frente al escenario · 2026',
+        'gallery-2-caption': 'Escenario del teatro · lado derecho frente al escenario · 2026',
+        'gallery-3-caption': 'Ático · estado documentado en 2026',
         'gallery-4-caption': 'Sala del teatro · vista documentada alternativa en 2026',
         'timeline-title': 'Cronología del Proyecto',
         'timeline-intro': 'Este diario de restauración seguirá recogiendo los hitos principales de Casino Mayor a medida que avance la obra, comenzando por la cubierta.',
