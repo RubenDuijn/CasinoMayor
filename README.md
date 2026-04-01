@@ -16,6 +16,10 @@ Casino Mayor is still under renovation. The website is partly intended to presen
 - Email: casinomayor.es@gmail.com
 - Future operational email: reservations@casinomayor.es
 
+## Channels
+- YouTube: `@CasinoMayor`
+- First public video still pending; add the live channel link to the site once the first update is published.
+
 ## Project Status
 - Current phase: renovation and concept development
 - Website role: public-facing concept presentation and business-plan support

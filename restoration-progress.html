@@ -517,6 +517,66 @@
       gap: 0.75rem;
     }
 
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .support-panel {
+      background: linear-gradient(180deg, rgba(42, 35, 48, 0.9), rgba(31, 26, 36, 0.9));
+      border: 1px solid rgba(217, 181, 111, 0.18);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .support-panel h3 {
+      font-size: 1.45rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .support-panel p {
+      margin: 0.3rem 0 0;
+      color: #baaf9f;
+      line-height: 1.6;
+    }
+
+    .support-list {
+      margin: 0.8rem 0 0;
+      padding-left: 1.1rem;
+      color: #d6c8b6;
+      line-height: 1.65;
+    }
+
+    .support-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .support-photo {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .support-photo img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(217, 181, 111, 0.16);
+    }
+
+    .support-photo-copy {
+      padding: 1rem;
+    }
+
+    .support-note {
+      margin: 0.8rem 0 0;
+      color: #d8c39d;
+      font-size: 0.92rem;
+    }
+
     .button {
       display: inline-flex;
       align-items: center;
@@ -564,7 +624,8 @@
       .hero-grid,
       .compare-grid,
       .photo-grid,
-      .cards {
+      .cards,
+      .support-grid {
         grid-template-columns: 1fr;
       }
 
@@ -644,6 +705,7 @@
         <a href="#compare" data-i18n="nav-compare">Comparisons</a>
         <a href="#gallery" data-i18n="nav-gallery">Gallery</a>
         <a href="#timeline" data-i18n="nav-timeline">Timeline</a>
+        <a href="#support" data-i18n="nav-support">Support</a>
         <a href="index.html" data-i18n="nav-back">Back to Main Site</a>
         <div class="lang-switcher">
           <button class="lang-toggle active" id="btn-en" onclick="setLang('en')">EN</button>
@@ -668,7 +730,7 @@
         <aside class="hero-side">
           <div>
             <small data-i18n="hero-side-label">Update note</small>
-            <p data-i18n="hero-side-text">The first release focuses on the theatre hall and first-floor salon. Exterior views, additional rooms, and milestone notes can be added over time.</p>
+            <p data-i18n="hero-side-text">The immediate priority is securing and repairing the roof, followed by the wider interior restoration. Exterior views, additional rooms, and milestone notes can be added over time.</p>
           </div>
           <img src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre condition at Casino Mayor" />
         </aside>
@@ -749,7 +811,7 @@
 
     <section class="section" id="timeline">
       <h2 data-i18n="timeline-title">Project Timeline</h2>
-      <p class="section-intro" data-i18n="timeline-intro">This journal is designed for regular milestone updates without reshaping the main site.</p>
+      <p class="section-intro" data-i18n="timeline-intro">This journal is designed for regular milestone updates, with the roof repair set as the first practical restoration priority.</p>
       <div class="timeline">
         <article class="timeline-item">
           <div class="timeline-date" data-i18n="timeline-1-date">Q2 2026</div>
@@ -763,6 +825,34 @@
           <div>
             <h3 data-i18n="timeline-2-title">Additional Rooms, Exterior Views &amp; Milestones</h3>
             <p data-i18n="timeline-2-text">Later quarterly updates can add more spaces, more before/vision pairs, and short notes on major restoration steps.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <h2 data-i18n="support-title">Roof First, Then the Wider Restoration</h2>
+      <p class="section-intro" data-i18n="support-intro">The first essential step is repairing and securing the roof so the rest of the building can be protected and restored in the right order.</p>
+      <div class="support-grid">
+        <article class="support-panel">
+          <h3 data-i18n="support-h3">Why support matters now</h3>
+          <p data-i18n="support-text">Roof work comes first because it protects the structure below and creates the right conditions for the next phases of the restoration.</p>
+          <ul class="support-list">
+            <li data-i18n="support-item-1">Immediate priority: stabilise and repair the roof.</li>
+            <li data-i18n="support-item-2">Next phase: protect interior spaces and continue the broader restoration.</li>
+            <li data-i18n="support-item-3">A crowdfunding campaign can be a strong fit if it is tied to this clear first goal and explained with honest updates.</li>
+          </ul>
+          <p class="support-note" data-i18n="support-note">A public support / crowdfunding campaign can be announced here once the structure, budget, and first target are finalised.</p>
+          <div class="cta-row" style="margin-top: 0.9rem;">
+            <a class="button primary" href="mailto:casinomayor.es@gmail.com?subject=Support%20the%20restoration%20of%20Casino%20Mayor" data-i18n="support-cta-1">Ask About Supporting the Restoration</a>
+            <a class="button secondary" href="https://wa.me/34659376099?text=Hello%20Casino%20Mayor%2C%20I%20would%20like%20to%20support%20the%20restoration." target="_blank" rel="noopener noreferrer" data-i18n="support-cta-2">WhatsApp</a>
+          </div>
+        </article>
+        <article class="support-panel support-photo">
+          <img src="images/Candelario Casino Mayor roof.jpg" alt="Current roof condition at Casino Mayor during restoration" />
+          <div class="support-photo-copy">
+            <h3 data-i18n="support-photo-title">Current roof condition</h3>
+            <p data-i18n="support-photo-text">An honest roof image helps explain why this phase comes first and why early support can make a real difference to the full restoration journey.</p>
           </div>
         </article>
       </div>
@@ -790,6 +880,7 @@
         'nav-compare': 'Comparisons',
         'nav-gallery': 'Gallery',
         'nav-timeline': 'Timeline',
+        'nav-support': 'Support',
         'nav-back': 'Back to Main Site',
         'hero-pill-1': 'Restoration Progress',
         'hero-pill-2': 'Update · Q2 2026',
@@ -797,7 +888,7 @@
         'hero-title': 'Tracking the restoration of Casino Mayor, quarter by quarter.',
         'hero-text': 'This journal pairs real site photography with illustrative vision imagery to show how the building is evolving. It begins with two Q2 2026 comparison sets and is designed to expand as new areas are documented.',
         'hero-side-label': 'Update note',
-        'hero-side-text': 'The first release focuses on the theatre hall and first-floor salon. Exterior views, additional rooms, and milestone notes can be added over time.',
+        'hero-side-text': 'The immediate priority is securing and repairing the roof, followed by the wider interior restoration. Exterior views, additional rooms, and milestone notes can be added over time.',
         'card-1-title': 'Documented Today',
         'card-1-text': 'Real 2026 site photography keeps the page grounded in the building as it stands now.',
         'card-2-title': 'Opening Vision',
@@ -817,13 +908,25 @@
         'gallery-1-caption': 'Theatre hall · documented site condition in 2026',
         'gallery-2-caption': 'First-floor salon · documented site condition in 2026',
         'timeline-title': 'Project Timeline',
-        'timeline-intro': 'This journal is designed for regular milestone updates without reshaping the main site.',
+        'timeline-intro': 'This journal is designed for regular milestone updates, with the roof repair set as the first practical restoration priority.',
         'timeline-1-date': 'Q2 2026',
         'timeline-1-title': 'First Published Update',
         'timeline-1-text': 'The first comparison sets establish a clear present-to-vision narrative for the restoration.',
         'timeline-2-date': 'Future updates',
         'timeline-2-title': 'Additional Rooms, Exterior Views & Milestones',
         'timeline-2-text': 'Later quarterly updates can add more spaces, more before/vision pairs, and short notes on major restoration steps.',
+        'support-title': 'Roof First, Then the Wider Restoration',
+        'support-intro': 'The first essential step is repairing and securing the roof so the rest of the building can be protected and restored in the right order.',
+        'support-h3': 'Why support matters now',
+        'support-text': 'Roof work comes first because it protects the structure below and creates the right conditions for the next phases of the restoration.',
+        'support-item-1': 'Immediate priority: stabilise and repair the roof.',
+        'support-item-2': 'Next phase: protect interior spaces and continue the broader restoration.',
+        'support-item-3': 'A crowdfunding campaign can be a strong fit if it is tied to this clear first goal and explained with honest updates.',
+        'support-note': 'A public support / crowdfunding campaign can be announced here once the structure, budget, and first target are finalised.',
+        'support-cta-1': 'Ask About Supporting the Restoration',
+        'support-cta-2': 'WhatsApp',
+        'support-photo-title': 'Current roof condition',
+        'support-photo-text': 'An honest roof image helps explain why this phase comes first and why early support can make a real difference to the full restoration journey.',
         'cta-title': 'A dedicated place to follow the restoration story.',
         'cta-text': 'The main homepage remains focused on the destination and opening vision, while this journal quietly documents the real progress of the building over time.',
         'cta-back': 'Return to Main Site',
@@ -834,6 +937,7 @@
         'nav-compare': 'Comparativas',
         'nav-gallery': 'Galería',
         'nav-timeline': 'Cronología',
+        'nav-support': 'Apoyar',
         'nav-back': 'Volver al Sitio Principal',
         'hero-pill-1': 'Progreso de la Restauración',
         'hero-pill-2': 'Actualización · Q2 2026',
@@ -841,7 +945,7 @@
         'hero-title': 'Siguiendo la restauración de Casino Mayor, trimestre a trimestre.',
         'hero-text': 'Este diario combina fotografía real del edificio con imágenes ilustrativas de visión para mostrar cómo evoluciona el proyecto. Comienza con dos comparativas de Q2 2026 y está pensado para crecer a medida que se documenten nuevas zonas.',
         'hero-side-label': 'Nota de actualización',
-        'hero-side-text': 'La primera versión se centra en la sala del teatro y el salón de la primera planta. Con el tiempo se podrán añadir vistas exteriores, más salas y nuevas notas de obra.',
+        'hero-side-text': 'La prioridad inmediata es asegurar y reparar la cubierta, seguida de la restauración interior en un sentido más amplio. Con el tiempo se podrán añadir vistas exteriores, más salas y nuevas notas de obra.',
         'card-1-title': 'Situación Documentada',
         'card-1-text': 'La fotografía real de 2026 mantiene la página anclada en el estado actual del edificio.',
         'card-2-title': 'Visión de Apertura',
@@ -861,13 +965,25 @@
         'gallery-1-caption': 'Sala del teatro · estado del espacio documentado en 2026',
         'gallery-2-caption': 'Salón de la primera planta · estado del espacio documentado en 2026',
         'timeline-title': 'Cronología del Proyecto',
-        'timeline-intro': 'Este diario está diseñado para incorporar hitos regulares sin necesidad de rehacer la página principal.',
+        'timeline-intro': 'Este diario está diseñado para incorporar hitos regulares, con la reparación de la cubierta como primera prioridad práctica de la restauración.',
         'timeline-1-date': 'Q2 2026',
         'timeline-1-title': 'Primera Actualización Publicada',
         'timeline-1-text': 'Las primeras comparativas establecen una narrativa clara entre el estado actual y la visión futura de la restauración.',
         'timeline-2-date': 'Próximas actualizaciones',
         'timeline-2-title': 'Más Salas, Vistas Exteriores e Hitos',
         'timeline-2-text': 'Las futuras actualizaciones trimestrales podrán añadir más espacios, más pares antes/visión y notas breves sobre los principales avances de la obra.',
+        'support-title': 'Primero la Cubierta, Después el Resto de la Restauración',
+        'support-intro': 'El primer paso esencial es reparar y asegurar la cubierta para proteger el edificio y permitir que el resto de la restauración avance en el orden correcto.',
+        'support-h3': 'Por qué el apoyo importa ahora',
+        'support-text': 'La obra de cubierta va primero porque protege la estructura inferior y crea las condiciones adecuadas para las siguientes fases de la restauración.',
+        'support-item-1': 'Prioridad inmediata: estabilizar y reparar la cubierta.',
+        'support-item-2': 'Siguiente fase: proteger los espacios interiores y continuar con la restauración general.',
+        'support-item-3': 'Una campaña de crowdfunding puede encajar muy bien si se centra en este primer objetivo claro y se explica con actualizaciones honestas.',
+        'support-note': 'Aquí puede anunciarse una campaña pública de apoyo / crowdfunding cuando estén definidos la estructura, el presupuesto y el primer objetivo.',
+        'support-cta-1': 'Consultar Cómo Apoyar la Restauración',
+        'support-cta-2': 'WhatsApp',
+        'support-photo-title': 'Estado actual de la cubierta',
+        'support-photo-text': 'Una imagen honesta de la cubierta ayuda a explicar por qué esta fase va primero y por qué el apoyo temprano puede marcar una diferencia real en todo el proceso de restauración.',
         'cta-title': 'Un lugar dedicado a seguir la historia de la restauración.',
         'cta-text': 'La página principal puede seguir centrada en el destino y la visión de apertura, mientras este diario documenta con discreción el progreso real del edificio a lo largo del tiempo.',
         'cta-back': 'Volver al Sitio Principal',
