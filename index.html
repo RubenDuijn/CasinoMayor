@@ -461,6 +461,25 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .experience-cards {
+      scroll-padding-left: 0.1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .experience-cards::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .experience-cards::-webkit-scrollbar-thumb {
+      background: rgba(217, 181, 111, 0.4);
+      border-radius: 999px;
+    }
+
+    .experience-cards::-webkit-scrollbar-track {
+      background: rgba(42, 35, 48, 0.3);
+      border-radius: 999px;
+    }
+
     .card {
       background: linear-gradient(180deg, rgba(42, 35, 48, 0.9), rgba(31, 26, 36, 0.9));
       border: 1px solid var(--line);
@@ -972,6 +991,22 @@
         grid-template-columns: 1fr;
       }
 
+      .experience-cards {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(280px, 86vw);
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x proximity;
+        padding-bottom: 0.35rem;
+        padding-right: 0.2rem;
+      }
+
+      .experience-cards .card {
+        scroll-snap-align: start;
+        min-height: 210px;
+      }
+
       .heritage-grid {
         grid-template-columns: 1fr;
         grid-template-areas:
@@ -1230,7 +1265,7 @@
     <section id="experiences" class="section">
       <h2 data-i18n="exp-h2">Experiences</h2>
       <p class="section-intro" data-i18n="exp-intro">From the Theatre stage to mountain routes beyond the village, from social dance nights to private stays, Casino Mayor brings together culture, rhythm, and hospitality under one roof.</p>
-      <div class="cards">
+      <div class="cards experience-cards">
         <article class="card">
           <h3 data-i18n="exp-dance-h3">Dance Academy Nights</h3>
           <p data-i18n="exp-dance-p">Salsa, Bachata, and Kizomba evenings across multiple rooms, with beginners, intermediate, and advanced tracks led by guest artists and local instructors.</p>
@@ -1287,6 +1322,8 @@
     </section>
 
     <section id="dining" class="section">
+      <h2 data-i18n="din-h2">Dining</h2>
+      <p class="section-intro" data-i18n="din-intro">From first tapas and regional wines to later cocktails after the show, the dining programme is shaped for long, social evenings inside Casino Mayor.</p>
       <div class="duo">
         <article class="card card-static">
           <h3 data-i18n="din-h3-1">Dining &amp; Lounge</h3>
@@ -1540,6 +1577,8 @@
         'her-tile2': 'Stone Character of Calle Mayor',
         'her-tile4': 'Evening Terrace Mood',
         'her-tile5': 'Casino Mayor First-Floor Salon Ambience',
+        'din-h2': 'Dining',
+        'din-intro': 'From first tapas and regional wines to later cocktails after the show, the dining programme is shaped for long, social evenings inside Casino Mayor.',
         'din-h3-1': 'Dining &amp; Lounge',
         'din-p-1': 'Seasonal plates and sharing formats for long evenings, paired with cocktails and bodega-led wine service.',
         'din-h3-2': "Chef's Table Nights",
@@ -1724,6 +1763,8 @@
         'her-tile2': 'El Carácter de la Calle Mayor',
         'her-tile4': 'Ambiente de Terraza Nocturna',
         'her-tile5': 'Ambiente del Salón de la Primera Planta',
+        'din-h2': 'Gastronomía',
+        'din-intro': 'Desde las primeras tapas y vinos de la zona hasta los cócteles de después del espectáculo, la propuesta gastronómica está pensada para noches largas y sociales en Casino Mayor.',
         'din-h3-1': 'Gastronomía &amp; Lounge',
         'din-p-1': 'Platos de temporada y formatos para compartir para veladas largas, con cócteles y servicio de vino liderado por la bodega.',
         'din-h3-2': 'Noches de la Mesa del Chef',
