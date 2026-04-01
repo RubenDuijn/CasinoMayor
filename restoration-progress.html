@@ -480,6 +480,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
+      align-items: start;
+    }
+
+    .gallery-note {
+      margin: -0.15rem 0 1rem;
+      color: #cdbb9d;
+      font-size: 0.9rem;
     }
 
     .photo-tile {
@@ -489,6 +496,7 @@
       overflow: hidden;
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
       transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
+      cursor: zoom-in;
     }
 
     .photo-tile:hover {
@@ -501,7 +509,18 @@
       width: 100%;
       height: 320px;
       object-fit: cover;
+      object-position: center;
       display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .photo-tile:hover img {
+      transform: scale(1.015);
+    }
+
+    .photo-tile.portrait img {
+      height: 440px;
+      object-position: center top;
     }
 
     .photo-caption {
@@ -509,6 +528,63 @@
       color: #d6c8b6;
       background: linear-gradient(180deg, rgba(27, 21, 33, 0.94), rgba(22, 17, 27, 0.94));
       border-top: 1px solid rgba(217, 181, 111, 0.16);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(8, 6, 10, 0.82);
+      backdrop-filter: blur(6px);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-dialog {
+      position: relative;
+      width: min(980px, 100%);
+      background: rgba(18, 14, 21, 0.96);
+      border: 1px solid rgba(217, 181, 111, 0.22);
+      border-radius: 16px;
+      padding: 0.85rem;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 0.55rem;
+      right: 0.55rem;
+      width: 2.1rem;
+      height: 2.1rem;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(15, 11, 17, 0.82);
+      color: #f2e3c4;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .lightbox-image {
+      width: 100%;
+      max-height: 76vh;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+      background: #0f0b11;
+    }
+
+    .lightbox-caption {
+      margin: 0;
+      padding: 0.8rem 0.3rem 0.1rem;
+      color: #d6c8b6;
+      line-height: 1.5;
     }
 
     .timeline {
@@ -675,6 +751,10 @@
       .cards,
       .support-grid {
         grid-template-columns: 1fr;
+      }
+
+      .photo-tile.portrait img {
+        height: 380px;
       }
 
       .timeline-item {
@@ -849,20 +929,21 @@
     <section class="section" id="gallery">
       <h2 data-i18n="gallery-title">Current Site Photos</h2>
       <p class="section-intro" data-i18n="gallery-intro">The gallery gathers a growing set of documented 2026 views and can expand with each future update.</p>
+      <p class="gallery-note" data-i18n="gallery-note">Click or tap any image to enlarge it.</p>
       <div class="photo-grid">
-        <article class="photo-tile">
+        <article class="photo-tile" data-lightbox-trigger tabindex="0" role="button">
           <img src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre view at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-1-caption">Theatre hall · documented site condition in 2026</div>
         </article>
-        <article class="photo-tile">
+        <article class="photo-tile" data-lightbox-trigger tabindex="0" role="button">
           <img src="images/Candelario Casino 2026.jpg" alt="Current 2026 first-floor salon view at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-2-caption">First-floor salon · documented site condition in 2026</div>
         </article>
-        <article class="photo-tile">
+        <article class="photo-tile portrait" data-lightbox-trigger tabindex="0" role="button">
           <img src="images/Candelario Theatre Stage 2026.jpg" alt="Current 2026 view of the theatre stage at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-3-caption">Theatre stage · current restoration view in 2026</div>
         </article>
-        <article class="photo-tile">
+        <article class="photo-tile" data-lightbox-trigger tabindex="0" role="button">
           <img src="images/Candelario Theatre 2026 II.jpg" alt="Alternate 2026 theatre view at Casino Mayor" loading="lazy" />
           <div class="photo-caption" data-i18n="gallery-4-caption">Theatre hall · alternate documented view in 2026</div>
         </article>
@@ -929,6 +1010,14 @@
     </section>
   </main>
 
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-dialog" role="dialog" aria-modal="true">
+      <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
+      <img class="lightbox-image" id="lightbox-image" src="" alt="" />
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
   <footer>
     <span data-i18n="footer">Casino Mayor · Restoration Progress · Candelario, Spain</span>
   </footer>
@@ -966,6 +1055,7 @@
         'label-vision': 'Illustrative Vision',
         'gallery-title': 'Current Site Photos',
         'gallery-intro': 'The gallery gathers a growing set of documented 2026 views and can expand with each future update.',
+        'gallery-note': 'Click or tap any image to enlarge it.',
         'gallery-1-caption': 'Theatre hall · documented site condition in 2026',
         'gallery-2-caption': 'First-floor salon · documented site condition in 2026',
         'gallery-3-caption': 'Theatre stage · current restoration view in 2026',
@@ -1026,6 +1116,7 @@
         'label-vision': 'Visión Ilustrativa',
         'gallery-title': 'Fotos Actuales del Espacio',
         'gallery-intro': 'La galería reúne una selección creciente de vistas documentadas en 2026 y puede ampliarse con cada futura actualización.',
+        'gallery-note': 'Pulse o haga clic en cualquier imagen para verla en mayor tamaño.',
         'gallery-1-caption': 'Sala del teatro · estado del espacio documentado en 2026',
         'gallery-2-caption': 'Salón de la primera planta · estado del espacio documentado en 2026',
         'gallery-3-caption': 'Escenario del teatro · vista actual de la restauración en 2026',
@@ -1106,6 +1197,61 @@
       });
     }
 
+    function initGalleryLightbox() {
+      var lightbox = document.getElementById('lightbox');
+      var lightboxImage = document.getElementById('lightbox-image');
+      var lightboxCaption = document.getElementById('lightbox-caption');
+      var closeButton = document.getElementById('lightbox-close');
+      if (!lightbox || !lightboxImage || !lightboxCaption || !closeButton) return;
+
+      function openLightbox(tile) {
+        var image = tile.querySelector('img');
+        var caption = tile.querySelector('.photo-caption');
+        if (!image) return;
+
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt || '';
+        lightboxCaption.textContent = caption ? caption.textContent : '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImage.src = '';
+      }
+
+      document.querySelectorAll('[data-lightbox-trigger]').forEach(function(tile) {
+        tile.addEventListener('click', function() {
+          openLightbox(tile);
+        });
+
+        tile.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openLightbox(tile);
+          }
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function(event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+          closeLightbox();
+        }
+      });
+    }
+
     document.querySelectorAll('[data-compare-slider]').forEach(function(slider) {
       slider.addEventListener('input', function() {
         var stage = slider.previousElementSibling;
@@ -1119,6 +1265,7 @@
       setLang(saved || 'en');
       initMenuToggle();
       initHeroSwap();
+      initGalleryLightbox();
     })();
   </script>
 </body>
