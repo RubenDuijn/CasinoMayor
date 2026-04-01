@@ -22,6 +22,8 @@ Casino Mayor is still under renovation. The website is partly intended to presen
 
 ## Project Status
 - Current phase: renovation and concept development
+- Immediate restoration priority: secure and repair the roof
+- Next priority after the roof: restore doors and windows to weatherproof the building, as many are missing or damaged
 - Website role: public-facing concept presentation and business-plan support
 - Opening timeline is communicated in the top hero pill on the page: "Grand Opening · Planned End 2027"
 
