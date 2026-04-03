@@ -60,6 +60,10 @@ Casino Mayor is still under renovation. The website is partly intended to presen
 - `index.html` - Main landing page
 - `images/` - Project images and visual assets
 
+## Image Asset Note
+- If a new image is added to `images/` and referenced in the HTML, it must also be added and committed to git or it will not appear on the live site.
+- Current example: `images/Ruben at Cruz del Herrerito.JPG` is used for the host-restorer card on the restoration page.
+
 ## Site Notes
 - Single-file static website with inline EN/ES language switching.
 - Production URL: http://casinomayor.es
