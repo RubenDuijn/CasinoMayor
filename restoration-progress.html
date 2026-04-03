@@ -917,8 +917,8 @@
       opacity: 0.94;
       display: inline-block;
       transform-origin: center;
-      text-shadow: 0 0 8px rgba(255, 232, 196, 0.42);
-      animation: patreonTwinkle 2.8s ease-in-out infinite;
+      text-shadow: 0 0 6px rgba(255, 232, 196, 0.3);
+      animation: patreonTwinkle 4.2s ease-in-out infinite;
     }
 
     .button.patreon .patreon-label::after {
@@ -928,8 +928,8 @@
       opacity: 0.9;
       display: inline-block;
       transform-origin: center;
-      text-shadow: 0 0 8px rgba(255, 232, 196, 0.38);
-      animation: patreonTwinkle 3.2s ease-in-out infinite 0.45s;
+      text-shadow: 0 0 6px rgba(255, 232, 196, 0.28);
+      animation: patreonTwinkle 4.8s ease-in-out infinite 0.7s;
     }
 
     .button.patreon::after {
@@ -943,7 +943,7 @@
       opacity: 0;
       background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.0) 20%, rgba(255, 255, 255, 0.24) 50%, transparent 80%);
       transform: translateX(-140%) skewX(-20deg);
-      animation: patreonSheen 5.6s ease-in-out infinite;
+      animation: patreonSheen 7.2s ease-in-out infinite;
     }
 
     .button.patreon:hover {
@@ -955,24 +955,24 @@
 
     @keyframes patreonTwinkle {
       0%, 100% {
-        opacity: 0.78;
-        transform: scale(0.96) rotate(0deg);
+        opacity: 0.82;
+        transform: scale(0.98) rotate(0deg);
       }
       50% {
         opacity: 1;
-        transform: scale(1.12) rotate(8deg);
+        transform: scale(1.05) rotate(4deg);
       }
     }
 
     @keyframes patreonSheen {
-      0%, 65%, 100% {
+      0%, 70%, 100% {
         opacity: 0;
         transform: translateX(-140%) skewX(-20deg);
       }
-      75% {
-        opacity: 0.45;
+      80% {
+        opacity: 0.28;
       }
-      85% {
+      88% {
         opacity: 0;
         transform: translateX(260%) skewX(-20deg);
       }
