@@ -637,6 +637,102 @@
       overflow: visible;
     }
 
+    .restoration-highlight {
+      position: relative;
+    }
+
+    .restoration-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .restoration-story-card {
+      background: linear-gradient(180deg, rgba(46, 36, 31, 0.92), rgba(29, 22, 26, 0.92));
+      border: 1px solid rgba(217, 181, 111, 0.26);
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .restoration-story {
+      margin: 0 0 0.9rem;
+      color: #f2e4cf;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.8rem, 3.6vw, 2.55rem);
+      line-height: 1.04;
+      max-width: 13ch;
+    }
+
+    .restoration-copy {
+      margin: 0;
+      color: #d8ccbd;
+      line-height: 1.7;
+      max-width: 54ch;
+    }
+
+    .restoration-story-card .cta-row {
+      margin-top: 1.15rem;
+    }
+
+    .restoration-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .restoration-photo {
+      background: rgba(24, 19, 30, 0.9);
+      border: 1px solid rgba(217, 181, 111, 0.2);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .restoration-photo:hover {
+      transform: translateY(-4px);
+      border-color: rgba(217, 181, 111, 0.35);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.42);
+    }
+
+    .restoration-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.97) contrast(1.08);
+      transition: filter 0.35s ease;
+    }
+
+    .restoration-photo:hover img {
+      filter: saturate(1.03) contrast(1.12);
+    }
+
+    .restoration-photo.theatre-shot img {
+      object-position: center 28%;
+    }
+
+    .restoration-photo.roof-shot img {
+      object-position: center center;
+    }
+
+    .restoration-photo p {
+      margin: 0;
+      padding: 0.72rem 0.85rem;
+      color: #dacdb9;
+      font-size: 0.84rem;
+      line-height: 1.3;
+      letter-spacing: 0.03em;
+      background: linear-gradient(180deg, rgba(27, 21, 33, 0.94), rgba(22, 17, 27, 0.94));
+      border-top: 1px solid rgba(217, 181, 111, 0.16);
+    }
+
     .menu-preview {
       margin-top: 1rem;
     }
@@ -931,6 +1027,7 @@
 
     @media (max-width: 980px) {
       .hero-grid,
+      .restoration-grid,
       .duo,
       .visit,
       .enquiry-banner {
@@ -999,6 +1096,14 @@
     @media (max-width: 640px) {
       .cards {
         grid-template-columns: 1fr;
+      }
+
+      .restoration-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .restoration-photo img {
+        min-height: 250px;
       }
 
       .experience-cards {
@@ -1269,6 +1374,32 @@
             <p data-i18n="hero-caption-text">Dance classes through the week, stage dinner on Friday, and a slower Sunday of cinema, wine, and tapas.</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section id="restoration" class="section restoration-highlight">
+      <h2 data-i18n="rest-h2">Restoration in Progress</h2>
+      <p class="section-intro" data-i18n="rest-intro">Casino Mayor is currently being restored, step by step, into a place where history, dance, and culture meet.</p>
+      <div class="restoration-grid">
+        <article class="restoration-story-card">
+          <div>
+            <p class="restoration-story" data-i18n="rest-story">This building has stood for generations. Now we're bringing it back to life.</p>
+            <p class="restoration-copy" data-i18n="rest-copy">The roof comes first, followed by the careful recovery of the theatre, salon, and upper rooms. The restoration journal shares current photographs, milestone notes, and the direction of the work as it unfolds.</p>
+          </div>
+          <div class="cta-row">
+            <a class="button primary" href="restoration-progress.html" data-i18n="rest-cta">Follow the restoration</a>
+          </div>
+        </article>
+        <div class="restoration-gallery">
+          <article class="restoration-photo theatre-shot">
+            <img src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre hall at Casino Mayor" loading="lazy" />
+            <p data-i18n="rest-photo-1">Theatre hall · 2026</p>
+          </article>
+          <article class="restoration-photo roof-shot">
+            <img src="images/Candelario Casino Mayor roof 2026.jpg" alt="Current 2026 roof condition at Casino Mayor" loading="lazy" />
+            <p data-i18n="rest-photo-2">Roof condition · 2026</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -1558,6 +1689,13 @@
         'hero-event': 'Heritage Concert &middot; 21:30',
         'hero-caption-label': 'This Week',
         'hero-caption-text': 'Dance classes through the week, stage dinner on Friday, and a slower Sunday of cinema, wine, and tapas.',
+        'rest-h2': 'Restoration in Progress',
+        'rest-intro': 'Casino Mayor is currently being restored, step by step, into a place where history, dance, and culture meet.',
+        'rest-story': "This building has stood for generations. Now we're bringing it back to life.",
+        'rest-copy': 'The roof comes first, followed by the careful recovery of the theatre, salon, and upper rooms. The restoration journal shares current photographs, milestone notes, and the direction of the work as it unfolds.',
+        'rest-cta': 'Follow the restoration',
+        'rest-photo-1': 'Theatre hall &middot; 2026',
+        'rest-photo-2': 'Roof condition &middot; 2026',
         'exp-h2': 'Experiences',
         'exp-intro': 'From the Theatre stage to mountain routes beyond the village, from social dance nights to private stays, Casino Mayor brings together culture, rhythm, and hospitality under one roof.',
         'exp-gaming-h3': 'Upstairs Cocktail Room',
@@ -1744,6 +1882,13 @@
         'hero-event': 'Concierto del Patrimonio &middot; 21:30',
         'hero-caption-label': 'Esta Semana',
         'hero-caption-text': 'Clases de baile durante la semana, cena con escenario el viernes y un domingo más pausado de cine, vino y tapas.',
+        'rest-h2': 'Restauracion en Marcha',
+        'rest-intro': 'Casino Mayor se esta restaurando, paso a paso, para convertirse en un lugar donde se encuentren la historia, el baile y la cultura.',
+        'rest-story': 'Este edificio ha permanecido en pie durante generaciones. Ahora le estamos devolviendo la vida.',
+        'rest-copy': 'La cubierta es lo primero, seguida por la recuperacion cuidadosa del teatro, el salon y las plantas superiores. El diario de restauracion comparte fotografias actuales, hitos y la direccion de las obras a medida que avanzan.',
+        'rest-cta': 'Seguir la restauracion',
+        'rest-photo-1': 'Sala del teatro &middot; 2026',
+        'rest-photo-2': 'Estado de la cubierta &middot; 2026',
         'exp-h2': 'Experiencias',
         'exp-intro': 'Desde el escenario del Teatro hasta las rutas de montaña más allá del pueblo, desde las noches de baile social hasta las estancias privadas, Casino Mayor reúne cultura, ritmo y hospitalidad bajo un mismo techo.',
         'exp-gaming-h3': 'Salón de Cócteles de Arriba',
