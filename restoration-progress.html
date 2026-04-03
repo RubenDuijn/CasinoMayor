@@ -900,10 +900,12 @@
     }
 
     .button.patreon {
-      color: #fff8f4;
-      border: 1px solid rgba(236, 164, 141, 0.72);
-      background: linear-gradient(135deg, rgba(214, 122, 96, 0.98), rgba(160, 74, 62, 0.98));
-      box-shadow: 0 12px 28px rgba(162, 76, 62, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      position: relative;
+      overflow: hidden;
+      color: #fff8f5;
+      border: 1px solid rgba(236, 177, 157, 0.76);
+      background: linear-gradient(135deg, rgba(206, 118, 96, 0.96), rgba(151, 73, 62, 0.98));
+      box-shadow: 0 12px 28px rgba(162, 76, 62, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.2);
       font-weight: 700;
       letter-spacing: 0.01em;
     }
@@ -912,14 +914,64 @@
       content: "✦";
       margin-right: 0.42rem;
       font-size: 0.82rem;
-      opacity: 0.92;
+      opacity: 0.94;
+      display: inline-block;
+      transform-origin: center;
+      text-shadow: 0 0 8px rgba(255, 232, 196, 0.42);
+      animation: patreonTwinkle 2.8s ease-in-out infinite;
+    }
+
+    .button.patreon::after {
+      content: "";
+      position: absolute;
+      top: -20%;
+      bottom: -20%;
+      left: -30%;
+      width: 38%;
+      pointer-events: none;
+      opacity: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.0) 20%, rgba(255, 255, 255, 0.24) 50%, transparent 80%);
+      transform: translateX(-140%) skewX(-20deg);
+      animation: patreonSheen 5.6s ease-in-out infinite;
     }
 
     .button.patreon:hover {
       transform: translateY(-2px);
-      border-color: rgba(248, 188, 167, 0.88);
-      background: linear-gradient(135deg, rgba(224, 132, 106, 1), rgba(171, 82, 68, 1));
-      box-shadow: 0 16px 34px rgba(162, 76, 62, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      border-color: rgba(248, 197, 178, 0.9);
+      background: linear-gradient(135deg, rgba(216, 127, 103, 0.98), rgba(160, 78, 66, 1));
+      box-shadow: 0 16px 34px rgba(162, 76, 62, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+    }
+
+    @keyframes patreonTwinkle {
+      0%, 100% {
+        opacity: 0.78;
+        transform: scale(0.96) rotate(0deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.12) rotate(8deg);
+      }
+    }
+
+    @keyframes patreonSheen {
+      0%, 65%, 100% {
+        opacity: 0;
+        transform: translateX(-140%) skewX(-20deg);
+      }
+      75% {
+        opacity: 0.45;
+      }
+      85% {
+        opacity: 0;
+        transform: translateX(260%) skewX(-20deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button.patreon::before,
+      .button.patreon::after {
+        animation: none;
+      }
     }
 
     footer {
