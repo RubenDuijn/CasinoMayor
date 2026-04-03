@@ -395,6 +395,51 @@
       max-width: 56ch;
     }
 
+    .host-card {
+      margin-top: 0.95rem;
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 0.75rem;
+      align-items: center;
+      border: 1px solid rgba(217, 181, 111, 0.24);
+      border-radius: 12px;
+      padding: 0.6rem;
+      background: rgba(24, 19, 30, 0.62);
+      max-width: 520px;
+    }
+
+    .host-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 1px solid rgba(217, 181, 111, 0.35);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+    }
+
+    .host-name {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.3rem;
+      color: #f3e7d4;
+      line-height: 1.1;
+    }
+
+    .host-role {
+      margin: 0.18rem 0 0;
+      color: #d8c39d;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    .host-note {
+      margin: 0.32rem 0 0;
+      color: #d7c8b3;
+      line-height: 1.5;
+      font-size: 0.93rem;
+    }
+
     .section {
       padding: 2.1rem 0;
       scroll-margin-top: 90px;
@@ -932,6 +977,16 @@
       .compare-stage { height: 260px; }
       .photo-tile img { height: 240px; }
       .hero-visual { height: 300px; }
+
+      .host-card {
+        grid-template-columns: 1fr;
+      }
+
+      .host-photo {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -983,6 +1038,14 @@
           <h1 data-i18n="hero-title">This building has stood for generations. Now we're bringing it back to life.</h1>
           <p data-i18n="hero-text">This restoration journal follows Casino Mayor as it stands in 2026, pairing current photographs with illustrative vision images to show how the building looks today, what comes next, and how each stage of the recovery is taking shape.</p>
           <p class="founder-note" data-i18n="hero-founder-note">I am restoring this building step by step so people who remember Casino Mayor from decades ago, and new generations discovering it now, can share it again.</p>
+          <article class="host-card" aria-label="Host and restorer profile">
+            <img class="host-photo" src="images/Ruben at Cruz del Herrerito.JPG" data-i18n-alt="host-photo-alt" alt="Ruben on the Cruz del Herrerito route in Candelario" loading="lazy" />
+            <div>
+              <p class="host-name" data-i18n="host-name">Ruben</p>
+              <p class="host-role" data-i18n="host-role">Host-Restorer</p>
+              <p class="host-note" data-i18n="host-note">I live this project locally, document each step, and welcome people who knew Casino Mayor decades ago alongside new visitors discovering it today.</p>
+            </div>
+          </article>
         </div>
         <aside class="hero-side">
           <div>
@@ -1178,6 +1241,10 @@
         'hero-title': "This building has stood for generations. Now we're bringing it back to life.",
         'hero-text': 'This restoration journal follows Casino Mayor as it stands in 2026, pairing current photographs with illustrative vision images to show how the building looks today, what comes next, and how each stage of the recovery is taking shape.',
         'hero-founder-note': 'I am restoring this building step by step so people who remember Casino Mayor from decades ago, and new generations discovering it now, can share it again.',
+        'host-photo-alt': 'Ruben on the Cruz del Herrerito route in Candelario',
+        'host-name': 'Ruben',
+        'host-role': 'Host-Restorer',
+        'host-note': 'I live this project locally, document each step, and welcome people who knew Casino Mayor decades ago alongside new visitors discovering it today.',
         'hero-side-label': 'Update note',
         'hero-side-text': 'The roof is the first major priority, followed by the careful restoration of the interior spaces. New photographs and milestone notes will follow as Casino Mayor continues to recover.',
         'hero-hover-hint': '<span class="hint-label">Current</span><span class="hint-arrow" aria-hidden="true"></span><span class="hint-label">Vision</span>',
@@ -1248,6 +1315,10 @@
         'hero-title': 'Este edificio ha permanecido en pie durante generaciones. Ahora le estamos devolviendo la vida.',
         'hero-text': 'Este diario de restauración sigue a Casino Mayor tal como se encuentra en 2026, combinando fotografías actuales con imágenes ilustrativas de visión para mostrar cómo está hoy el edificio, qué viene después y cómo va tomando forma cada etapa de su recuperación.',
         'hero-founder-note': 'Estoy restaurando este edificio paso a paso para que quienes recuerdan Casino Mayor de hace décadas, y las nuevas generaciones que lo descubren ahora, puedan volver a compartirlo.',
+        'host-photo-alt': 'Ruben en la ruta de la Cruz del Herrerito en Candelario',
+        'host-name': 'Ruben',
+        'host-role': 'Anfitrión-Restaurador',
+        'host-note': 'Vivo este proyecto desde Candelario, documento cada fase y doy la bienvenida tanto a quienes recuerdan Casino Mayor de hace décadas como a quienes lo descubren hoy.',
         'hero-side-label': 'Nota de actualización',
         'hero-side-text': 'La cubierta es la primera gran prioridad, seguida de la restauración cuidadosa de los espacios interiores. Se irán sumando nuevas fotografías y notas de avance a medida que avance la recuperación de Casino Mayor.',
         'hero-hover-hint': '<span class="hint-label">Actual</span><span class="hint-arrow" aria-hidden="true"></span><span class="hint-label">Visión</span>',
