@@ -385,16 +385,6 @@
 
     .hero-side p { margin: 0; color: #d2c4b0; }
 
-    .founder-note {
-      margin-top: 0.8rem;
-      color: #e2d1b5;
-      font-style: italic;
-      font-size: 0.98rem;
-      border-left: 2px solid rgba(217, 181, 111, 0.42);
-      padding-left: 0.8rem;
-      max-width: 56ch;
-    }
-
     .host-card {
       margin-top: 0.95rem;
       display: grid;
@@ -440,10 +430,11 @@
       font-size: 0.93rem;
     }
 
-    .hero-side .host-card {
-      margin-top: 0;
-      max-width: none;
-      background: rgba(18, 14, 22, 0.56);
+    .hero-update {
+      border: 1px solid rgba(217, 181, 111, 0.18);
+      border-radius: 12px;
+      padding: 0.8rem 0.9rem;
+      background: rgba(18, 14, 22, 0.5);
     }
 
     .section {
@@ -1043,18 +1034,6 @@
           </div>
           <h1 data-i18n="hero-title">This building has stood for generations. Now we're bringing it back to life.</h1>
           <p data-i18n="hero-text">This restoration journal follows Casino Mayor as it stands in 2026, pairing current photographs with illustrative vision images to show how the building looks today, what comes next, and how each stage of the recovery is taking shape.</p>
-          <p class="founder-note" data-i18n="hero-founder-note">I am restoring Casino Mayor step by step so people who remember it from decades ago, and new generations discovering it now, can share it again.</p>
-        </div>
-        <aside class="hero-side">
-          <div>
-            <small data-i18n="hero-side-label">Update note</small>
-            <p data-i18n="hero-side-text">The roof is the first major priority, followed by the careful restoration of the interior spaces. New photographs and milestone notes will follow as Casino Mayor continues to recover.</p>
-          </div>
-          <div class="hero-visual" id="hero-visual" tabindex="0" aria-label="Current theatre image with a subtle vision preview on hover">
-            <img class="hero-image-current" src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre condition at Casino Mayor" />
-            <img class="hero-image-vision" src="images/Candelario Theatre.png" alt="Illustrative future vision of the Casino Mayor theatre" />
-            <span class="hero-visual-badge" data-i18n="hero-hover-hint"><span class="hint-label">Current</span><span class="hint-arrow" aria-hidden="true"></span><span class="hint-label">Vision</span></span>
-          </div>
           <article class="host-card" aria-label="Host and restorer profile">
             <img class="host-photo" src="images/Ruben at Cruz del Herrerito.JPG" data-i18n-alt="host-photo-alt" alt="Ruben on the Cruz del Herrerito route in Candelario" loading="lazy" />
             <div>
@@ -1063,6 +1042,17 @@
               <p class="host-note" data-i18n="host-note">I am restoring Casino Mayor step by step from Candelario so people who remember it from decades ago, and new generations discovering it now, can share it again.</p>
             </div>
           </article>
+        </div>
+        <aside class="hero-side">
+          <div class="hero-visual" id="hero-visual" tabindex="0" aria-label="Current theatre image with a subtle vision preview on hover">
+            <img class="hero-image-current" src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre condition at Casino Mayor" />
+            <img class="hero-image-vision" src="images/Candelario Theatre.png" alt="Illustrative future vision of the Casino Mayor theatre" />
+            <span class="hero-visual-badge" data-i18n="hero-hover-hint"><span class="hint-label">Current</span><span class="hint-arrow" aria-hidden="true"></span><span class="hint-label">Vision</span></span>
+          </div>
+          <div class="hero-update">
+            <small data-i18n="hero-side-label">Update note</small>
+            <p data-i18n="hero-side-text">The roof is the first major priority, followed by the careful restoration of the interior spaces. New photographs and milestone notes will follow as Casino Mayor continues to recover.</p>
+          </div>
         </aside>
       </div>
     </section>
@@ -1246,7 +1236,6 @@
         'hero-pill-3': 'Current Photos & Vision',
         'hero-title': "This building has stood for generations. Now we're bringing it back to life.",
         'hero-text': 'This restoration journal follows Casino Mayor as it stands in 2026, pairing current photographs with illustrative vision images to show how the building looks today, what comes next, and how each stage of the recovery is taking shape.',
-        'hero-founder-note': 'I am restoring Casino Mayor step by step so people who remember it from decades ago, and new generations discovering it now, can share it again.',
         'host-photo-alt': 'Ruben on the Cruz del Herrerito route in Candelario',
         'host-name': 'Ruben',
         'host-role': 'Host-Restorer',
@@ -1320,7 +1309,6 @@
         'hero-pill-3': 'Fotos Actuales y Visión',
         'hero-title': 'Este edificio ha permanecido en pie durante generaciones. Ahora le estamos devolviendo la vida.',
         'hero-text': 'Este diario de restauración sigue a Casino Mayor tal como se encuentra en 2026, combinando fotografías actuales con imágenes ilustrativas de visión para mostrar cómo está hoy el edificio, qué viene después y cómo va tomando forma cada etapa de su recuperación.',
-        'hero-founder-note': 'Estoy restaurando Casino Mayor paso a paso para que quienes lo recuerdan de hace décadas, y las nuevas generaciones que lo descubren ahora, puedan volver a compartirlo.',
         'host-photo-alt': 'Ruben en la ruta de la Cruz del Herrerito en Candelario',
         'host-name': 'Ruben',
         'host-role': 'Anfitrión-Restaurador',
