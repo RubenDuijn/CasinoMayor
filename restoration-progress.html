@@ -900,17 +900,26 @@
     }
 
     .button.patreon {
-      color: #fff7f2;
-      border: 1px solid rgba(232, 133, 104, 0.68);
-      background: linear-gradient(180deg, rgba(196, 98, 75, 0.98), rgba(144, 62, 50, 0.98));
-      box-shadow: 0 12px 28px rgba(162, 76, 62, 0.34);
+      color: #fff8f4;
+      border: 1px solid rgba(236, 164, 141, 0.72);
+      background: linear-gradient(135deg, rgba(214, 122, 96, 0.98), rgba(160, 74, 62, 0.98));
+      box-shadow: 0 12px 28px rgba(162, 76, 62, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .button.patreon::before {
+      content: "✦";
+      margin-right: 0.42rem;
+      font-size: 0.82rem;
+      opacity: 0.92;
     }
 
     .button.patreon:hover {
       transform: translateY(-2px);
-      border-color: rgba(245, 167, 145, 0.8);
-      background: linear-gradient(180deg, rgba(208, 108, 84, 1), rgba(155, 67, 54, 1));
-      box-shadow: 0 16px 34px rgba(162, 76, 62, 0.42);
+      border-color: rgba(248, 188, 167, 0.88);
+      background: linear-gradient(135deg, rgba(224, 132, 106, 1), rgba(171, 82, 68, 1));
+      box-shadow: 0 16px 34px rgba(162, 76, 62, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.22);
     }
 
     footer {
