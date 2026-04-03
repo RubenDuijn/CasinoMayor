@@ -18,6 +18,7 @@ Casino Mayor is still under renovation. The website is partly intended to presen
 
 ## Channels
 - YouTube: `@CasinoMayor`
+- Patreon: https://patreon.com/Ruben_CasinoMayorRestoration
 - First public video still pending; add the live channel link to the site once the first update is published.
 
 ## Project Status
@@ -37,7 +38,7 @@ Casino Mayor is still under renovation. The website is partly intended to presen
 ## Attention to Trust to Revenue Path
 - YouTube role: attract attention with short update videos and visible progress moments.
 - Website role: build trust through clear updates, real photos, and transparent priorities.
-- Future monetization direction: prepare for Patreon or membership support once a recurring update rhythm is established.
+- Public support channel: Patreon is live for followers who want to support the restoration journey.
 
 ## Community Memories Program
 - Add a recurring call for community memories: invite stories and historic photos from people who knew Casino Mayor before closure.
@@ -46,7 +47,7 @@ Casino Mayor is still under renovation. The website is partly intended to presen
 
 ## Next Channel Rollout
 - Phase 1 (now): publish short restoration updates on YouTube and embed the channel link on the website.
-- Phase 2 (after regular cadence): add Patreon support link for followers who want to back the restoration journey.
+- Phase 2 (now live): Patreon support link is available for followers who want to back the restoration journey.
 
 ## Bank-Readiness Messaging
 - Keep language credible and concrete: heritage restoration, phased execution, and clear priorities (roof -> doors/windows -> interiors).
