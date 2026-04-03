@@ -27,6 +27,18 @@ Casino Mayor is still under renovation. The website is partly intended to presen
 - Website role: public-facing concept presentation and business-plan support
 - Opening timeline is communicated in the top hero pill on the page: "Grand Opening · Planned End 2027"
 
+## Story and Community Direction
+- Core mission: preserve heritage, restore the 1888 building, and bring it back to life for dance, culture, and shared evenings.
+- Community goal: make Casino Mayor feel open to all ages, including people who visited decades ago and now want to return with younger generations.
+- Voice guideline: keep restoration copy human and emotional, not only technical.
+- Minimum narrative structure on restoration updates: short intro story + "Current state" + "Next steps".
+- Human trust line: include a first-person note such as "I am restoring this building step by step..." on key pages.
+
+## Attention to Trust to Revenue Path
+- YouTube role: attract attention with short update videos and visible progress moments.
+- Website role: build trust through clear updates, real photos, and transparent priorities.
+- Future monetization direction: prepare for Patreon or membership support once a recurring update rhythm is established.
+
 ## Repository
 - https://github.com/RubenDuijn/CasinoMayor
 
