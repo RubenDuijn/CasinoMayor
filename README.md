@@ -39,6 +39,20 @@ Casino Mayor is still under renovation. The website is partly intended to presen
 - Website role: build trust through clear updates, real photos, and transparent priorities.
 - Future monetization direction: prepare for Patreon or membership support once a recurring update rhythm is established.
 
+## Community Memories Program
+- Add a recurring call for community memories: invite stories and historic photos from people who knew Casino Mayor before closure.
+- Positioning line to preserve: the building has been closed for about 50 years and is now reopening as a shared cultural place for old and new generations.
+- Historical framing to use in copy: in Spanish tradition, a "casino" is a social-cultural meeting house, not only a gambling concept.
+
+## Next Channel Rollout
+- Phase 1 (now): publish short restoration updates on YouTube and embed the channel link on the website.
+- Phase 2 (after regular cadence): add Patreon support link for followers who want to back the restoration journey.
+
+## Bank-Readiness Messaging
+- Keep language credible and concrete: heritage restoration, phased execution, and clear priorities (roof -> doors/windows -> interiors).
+- Show continuity: regular public updates, milestone timeline, and documented community engagement.
+- Keep investment narrative practical: restoration creates a viable cultural venue for events, hospitality, and intergenerational community use.
+
 ## Repository
 - https://github.com/RubenDuijn/CasinoMayor
 
