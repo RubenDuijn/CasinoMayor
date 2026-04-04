@@ -1014,6 +1014,45 @@
       justify-content: center;
     }
 
+    .status-actions .button.primary {
+      position: relative;
+      overflow: hidden;
+      border-color: rgba(240, 205, 137, 0.72);
+      box-shadow: 0 12px 26px rgba(213, 170, 99, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    }
+
+    .status-actions .button.primary::after {
+      content: "";
+      position: absolute;
+      top: -22%;
+      bottom: -22%;
+      left: -34%;
+      width: 36%;
+      pointer-events: none;
+      opacity: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0) 18%, rgba(255, 255, 255, 0.22) 50%, transparent 82%);
+      transform: translateX(-150%) skewX(-18deg);
+      animation: statusButtonSheen 8.5s ease-in-out infinite;
+    }
+
+    .status-actions .button.primary:hover {
+      box-shadow: 0 15px 30px rgba(213, 170, 99, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes statusButtonSheen {
+      0%, 76%, 100% {
+        opacity: 0;
+        transform: translateX(-150%) skewX(-18deg);
+      }
+      84% {
+        opacity: 0.26;
+      }
+      92% {
+        opacity: 0;
+        transform: translateX(260%) skewX(-18deg);
+      }
+    }
+
     footer {
       padding: 2rem 0 2.3rem;
       color: #a89d91;
