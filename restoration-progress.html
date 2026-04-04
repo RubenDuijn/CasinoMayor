@@ -227,17 +227,9 @@
     }
 
     h1 {
-      font-size: clamp(2rem, 3.9vw, 3.45rem);
-      line-height: 1.1;
+      font-size: clamp(1.94rem, 3.8vw, 3.3rem);
+      line-height: 1.08;
       margin-bottom: 0.9rem;
-    }
-
-    .hero-title-line {
-      display: block;
-    }
-
-    .hero-title-line + .hero-title-line {
-      margin-top: 0.08em;
     }
 
     .hero-copy {
@@ -451,6 +443,22 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       line-height: 1.35;
+    }
+
+    .host-meta {
+      margin: 0.16rem 0 0;
+      color: #cbb48a;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      line-height: 1.35;
+    }
+
+    .host-meta::before {
+      content: "⌖";
+      display: inline-block;
+      margin-right: 0.34rem;
+      color: #d9b56f;
+      font-weight: 700;
     }
 
     .host-note {
@@ -1088,8 +1096,8 @@
       nav a { font-size: 0.82rem; }
       .hero { padding-top: 3.5rem; }
       .hero-copy h1 {
-        font-size: 1.78rem;
-        line-height: 1.14;
+        font-size: 1.66rem;
+        line-height: 1.16;
       }
       .compare-stage { height: 260px; }
       .photo-tile img { height: 240px; }
@@ -1152,13 +1160,14 @@
             <span class="pill" data-i18n="hero-pill-2">Update · Q2 2026</span>
             <span class="pill" data-i18n="hero-pill-3">Current Photos &amp; Vision</span>
           </div>
-          <h1 data-i18n="hero-title"><span class="hero-title-line">This building has stood for generations.</span><span class="hero-title-line">Its current state is where the next chapter begins.</span></h1>
+          <h1 data-i18n="hero-title">This building has stood for generations.<br />Its current state is where the next chapter begins.</h1>
           <p data-i18n="hero-text">Casino Mayor is more than a building. This restoration journal follows it as it stands in 2026, pairing current photographs with illustrative vision images to show what survives today, what comes next, and how the recovery is intended to take shape.</p>
           <article class="host-card" aria-label="Owner and restorer profile">
             <img class="host-photo" src="images/Ruben at Cruz del Herrerito.JPG" data-i18n-alt="host-photo-alt" alt="Ruben at Cruz del Herrerito, Candelario" loading="lazy" />
             <div>
               <p class="host-name" data-i18n="host-name">Ruben</p>
-              <p class="host-role" data-i18n="host-role">Owner-Restorer · Cruz del Herrerito, Candelario</p>
+              <p class="host-role" data-i18n="host-role">Owner-Restorer</p>
+              <p class="host-meta" data-i18n="host-location">Cruz del Herrerito, Candelario</p>
               <p class="host-note" data-i18n="host-note">My goal is to restore Casino Mayor step by step here in Candelario, so that those who remember it from decades ago — and new generations discovering it today — can come together here again.</p>
             </div>
           </article>
@@ -1354,11 +1363,12 @@
         'hero-pill-1': 'Current State',
         'hero-pill-2': 'Update · Q2 2026',
         'hero-pill-3': 'Current Photos & Vision',
-        'hero-title': '<span class="hero-title-line">This building has stood for generations.</span><span class="hero-title-line">Its current state is where the next chapter begins.</span>',
+        'hero-title': 'This building has stood for generations.<br />Its current state is where the next chapter begins.',
         'hero-text': 'Casino Mayor is more than a building. This restoration journal follows it as it stands in 2026, pairing current photographs with illustrative vision images to show what survives today, what comes next, and how the recovery is intended to take shape.',
         'host-photo-alt': 'Ruben at Cruz del Herrerito, Candelario',
         'host-name': 'Ruben',
-        'host-role': 'Owner-Restorer · Cruz del Herrerito, Candelario',
+        'host-role': 'Owner-Restorer',
+        'host-location': 'Cruz del Herrerito, Candelario',
         'host-note': 'My goal is to restore Casino Mayor step by step here in Candelario, so that those who remember it from decades ago — and new generations discovering it today — can come together here again.',
         'hero-side-label': 'Current priority',
         'hero-side-text': 'The roof has been identified as the first essential phase. From there, interior recovery, new milestone notes, and future video updates can follow.',
@@ -1427,11 +1437,12 @@
         'hero-pill-1': 'Estado Actual',
         'hero-pill-2': 'Actualización · Q2 2026',
         'hero-pill-3': 'Fotos Actuales y Visión',
-        'hero-title': '<span class="hero-title-line">Este edificio ha permanecido en pie durante generaciones.</span><span class="hero-title-line">Su estado actual es el punto de partida del próximo capítulo.</span>',
+        'hero-title': 'Este edificio ha permanecido en pie durante generaciones.<br />Su estado actual es el punto de partida del próximo capítulo.',
         'hero-text': 'Casino Mayor es más que un edificio. Este diario de restauración lo sigue tal como se encuentra en 2026, combinando fotografías actuales con imágenes ilustrativas de visión para mostrar qué perdura hoy, qué viene después y cómo se plantea que tome forma su recuperación.',
         'host-photo-alt': 'Ruben en la Cruz del Herrerito, Candelario',
         'host-name': 'Ruben',
-        'host-role': 'Propietario-Restaurador · Cruz del Herrerito, Candelario',
+        'host-role': 'Propietario-Restaurador',
+        'host-location': 'Cruz del Herrerito, Candelario',
         'host-note': 'Mi objetivo es restaurar Casino Mayor paso a paso aquí, en Candelario, para que quienes lo recuerdan de hace décadas —y las nuevas generaciones que lo descubren hoy— puedan volver a reunirse aquí.',
         'hero-side-label': 'Prioridad actual',
         'hero-side-text': 'La cubierta ha sido identificada como la primera fase esencial. A partir de ahí, podrán llegar la recuperación interior, nuevos hitos y futuras actualizaciones en vídeo.',
