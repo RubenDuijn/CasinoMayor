@@ -192,9 +192,9 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.7rem;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
+      gap: 1.9rem;
+      align-items: start;
     }
 
     .hero-tags {
@@ -227,9 +227,10 @@
     }
 
     h1 {
-      font-size: clamp(1.94rem, 3.8vw, 3.3rem);
+      font-size: clamp(1.84rem, 3.2vw, 3.05rem);
       line-height: 1.08;
       margin-bottom: 0.9rem;
+      text-wrap: balance;
     }
 
     .hero-copy {
@@ -1030,7 +1031,7 @@
       text-align: center;
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1120px) {
       .hero-grid,
       .compare-grid,
       .photo-grid,
@@ -1437,7 +1438,7 @@
         'hero-pill-1': 'Estado Actual',
         'hero-pill-2': 'Actualización · Q2 2026',
         'hero-pill-3': 'Fotos Actuales y Visión',
-        'hero-title': 'Este edificio ha permanecido en pie durante generaciones.<br />Su estado actual es el punto de partida del próximo capítulo.',
+        'hero-title': 'Este edificio lleva generaciones en pie.<br />Su estado actual marca el inicio del próximo capítulo.',
         'hero-text': 'Casino Mayor es más que un edificio. Este diario de restauración lo sigue tal como se encuentra en 2026, combinando fotografías actuales con imágenes ilustrativas de visión para mostrar qué perdura hoy, qué viene después y cómo se plantea que tome forma su recuperación.',
         'host-photo-alt': 'Ruben en la Cruz del Herrerito, Candelario',
         'host-name': 'Ruben',
