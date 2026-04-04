@@ -192,8 +192,8 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
-      gap: 1.15rem 1.9rem;
+      grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
+      gap: 1.9rem;
       align-items: start;
     }
 
@@ -238,8 +238,6 @@
       flex-direction: column;
       gap: 0.95rem;
       min-width: 0;
-      grid-column: 1 / -1;
-      max-width: 54rem;
     }
 
     .hero-copy p,
@@ -1165,16 +1163,16 @@
           </div>
           <h1 data-i18n="hero-title">This building has stood for generations.<br />Its current state is where the next chapter begins.</h1>
           <p data-i18n="hero-text">Casino Mayor is more than a building. This restoration journal follows it as it stands in 2026, pairing current photographs with illustrative vision images to show what survives today, what comes next, and how the recovery is intended to take shape.</p>
+          <article class="host-card" aria-label="Owner and restorer profile">
+            <img class="host-photo" src="images/Ruben at Cruz del Herrerito.JPG" data-i18n-alt="host-photo-alt" alt="Ruben at Cruz del Herrerito, Candelario" loading="lazy" />
+            <div>
+              <p class="host-name" data-i18n="host-name">Ruben</p>
+              <p class="host-role" data-i18n="host-role">Owner-Restorer</p>
+              <p class="host-meta" data-i18n="host-location">Cruz del Herrerito, Candelario</p>
+              <p class="host-note" data-i18n="host-note">My goal is to restore Casino Mayor step by step here in Candelario, so that those who remember it from decades ago — and new generations discovering it today — can come together here again.</p>
+            </div>
+          </article>
         </div>
-        <article class="host-card" aria-label="Owner and restorer profile">
-          <img class="host-photo" src="images/Ruben at Cruz del Herrerito.JPG" data-i18n-alt="host-photo-alt" alt="Ruben at Cruz del Herrerito, Candelario" loading="lazy" />
-          <div>
-            <p class="host-name" data-i18n="host-name">Ruben</p>
-            <p class="host-role" data-i18n="host-role">Owner-Restorer</p>
-            <p class="host-meta" data-i18n="host-location">Cruz del Herrerito, Candelario</p>
-            <p class="host-note" data-i18n="host-note">My goal is to restore Casino Mayor step by step here in Candelario, so that those who remember it from decades ago — and new generations discovering it today — can come together here again.</p>
-          </div>
-        </article>
         <aside class="hero-side">
           <div class="hero-visual" id="hero-visual" tabindex="0" aria-label="Current theatre image with a subtle vision preview on hover">
             <img class="hero-image-current" src="images/Candelario Theatre 2026.jpg" alt="Current 2026 theatre condition at Casino Mayor" />
