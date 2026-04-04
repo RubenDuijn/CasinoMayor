@@ -188,13 +188,14 @@
 
     .hero {
       padding: 4.5rem 0 3rem;
+      scroll-margin-top: 92px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.13fr) minmax(336px, 0.87fr);
-      gap: 0.9rem;
-      align-items: start;
+      grid-template-columns: minmax(0, 1.12fr) minmax(336px, 0.88fr);
+      gap: 0.82rem;
+      align-items: stretch;
     }
 
     .hero-tags {
@@ -236,8 +237,9 @@
     .hero-copy {
       display: flex;
       flex-direction: column;
-      gap: 0.72rem;
+      gap: 0.68rem;
       min-width: 0;
+      height: 100%;
     }
 
     .hero-copy p,
@@ -265,6 +267,7 @@
       display: grid;
       gap: 0.78rem;
       align-content: start;
+      height: 100%;
       transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.35s ease;
     }
 
@@ -400,7 +403,7 @@
     .hero-side p { margin: 0; color: #d2c4b0; }
 
     .host-card {
-      margin-top: 0.14rem;
+      margin-top: auto;
       display: grid;
       grid-template-columns: 112px minmax(0, 1fr);
       gap: 0.72rem;
