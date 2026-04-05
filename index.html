@@ -2208,7 +2208,14 @@
     (function() {
       var saved;
       try { saved = localStorage.getItem('cm-lang') || localStorage.getItem('cm-progress-lang'); } catch(e) {}
-      setLang(saved || 'en');
+
+      var browserLang = 'en';
+      try {
+        browserLang = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || 'en';
+      } catch(e) {}
+
+      var preferred = saved || (/^es\b/i.test(browserLang) ? 'es' : 'en');
+      setLang(preferred);
       initMenuToggle();
     })();
   </script>
