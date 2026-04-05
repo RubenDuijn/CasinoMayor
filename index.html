@@ -1016,8 +1016,8 @@
     .status-actions .button.primary {
       position: relative;
       overflow: hidden;
-      border-color: rgba(240, 205, 137, 0.84);
-      box-shadow: 0 15px 32px rgba(213, 170, 99, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border-color: rgba(240, 205, 137, 0.88);
+      box-shadow: 0 16px 34px rgba(213, 170, 99, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .status-actions .button.primary::after {
@@ -1026,30 +1026,50 @@
       top: -24%;
       bottom: -24%;
       left: -36%;
-      width: 44%;
+      width: 46%;
       pointer-events: none;
       opacity: 0;
-      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0) 14%, rgba(255, 255, 255, 0.4) 50%, transparent 86%);
+      background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0) 14%, rgba(255, 255, 255, 0.46) 50%, transparent 86%);
       transform: translateX(-150%) skewX(-18deg);
-      animation: statusButtonSheen 5.8s ease-in-out infinite;
+      animation: statusButtonSheen 5.1s ease-in-out infinite;
     }
 
     .status-actions .button.primary:hover {
-      box-shadow: 0 19px 36px rgba(213, 170, 99, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+      box-shadow: 0 20px 38px rgba(213, 170, 99, 0.44), inset 0 1px 0 rgba(255, 255, 255, 0.24);
     }
 
     @keyframes statusButtonSheen {
-      0%, 64%, 100% {
+      0%, 60%, 100% {
         opacity: 0;
         transform: translateX(-150%) skewX(-18deg);
       }
-      76% {
-        opacity: 0.46;
+      74% {
+        opacity: 0.52;
       }
-      87% {
+      86% {
         opacity: 0;
         transform: translateX(260%) skewX(-18deg);
       }
+    }
+
+    .visit .enquiry-banner {
+      margin: 0;
+      height: 100%;
+      grid-template-columns: 1fr;
+      align-content: start;
+      padding: 1rem;
+    }
+
+    .visit .enquiry-banner h3 {
+      font-size: 1.42rem;
+    }
+
+    .visit .enquiry-banner .cta-row {
+      justify-content: flex-start;
+    }
+
+    .status-footer {
+      margin-top: 2.2rem;
     }
 
     footer {
@@ -1711,31 +1731,31 @@
           </div>
           <p class="contact-meta" data-i18n="vis-direct">Get in touch for private visits or project enquiries.</p>
         </div>
-        <aside class="hours">
-          <h3 class="hours-title" data-i18n="vis-hours-h3">Project Status &amp; Access</h3>
-          <p data-i18n="vis-hours-1">Status: current state documentation; the programming shown across this page reflects the opening vision.</p>
-          <p data-i18n="vis-hours-2">Grand opening target: Q4 2027.</p>
-          <p data-i18n="vis-hours-3">Private visits and all enquiries are coordinated via WhatsApp and email.</p>
-          <p data-i18n="vis-hours-4">For current photos, next steps, and optional support for the first roof phase, visit the restoration journal or Patreon.</p>
-          <div class="status-actions">
-            <a class="button primary" href="restoration-progress.html" data-i18n="vis-hours-cta-1">View Restoration Journal</a>
-            <a class="button secondary" href="https://patreon.com/Ruben_CasinoMayorRestoration" target="_blank" rel="noopener noreferrer" data-i18n="vis-hours-cta-2">Support on Patreon</a>
+        <div class="enquiry-banner">
+          <div>
+            <h3 data-i18n="banner-h3">Planning a stay, a dance visit, or a private evening?</h3>
+            <p data-i18n="banner-p">Tell us what you have in mind and we will help shape the right format — from group stays and dinners to dance programmes and weekend escapes.</p>
           </div>
-        </aside>
+          <div class="cta-row">
+            <a class="button primary" href="mailto:casinomayor.es@gmail.com?subject=Casino%20Mayor%20planning%20enquiry" data-i18n="banner-cta-1">Start an Enquiry</a>
+            <a class="button secondary" href="#dining" data-i18n="banner-cta-2">View Dining</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="shell">
-      <div class="enquiry-banner">
-        <div>
-          <h3 data-i18n="banner-h3">Planning a stay, a dance visit, or a private evening?</h3>
-          <p data-i18n="banner-p">Tell us what you have in mind and we will help shape the right format — from group stays and dinners to dance programmes and weekend escapes.</p>
+    <section class="shell status-footer">
+      <aside class="hours">
+        <h3 class="hours-title" data-i18n="vis-hours-h3">Project Status &amp; Access</h3>
+        <p data-i18n="vis-hours-1">Status: current state documentation; the programming shown across this page reflects the opening vision.</p>
+        <p data-i18n="vis-hours-2">Grand opening target: Q4 2027.</p>
+        <p data-i18n="vis-hours-3">Private visits and all enquiries are coordinated via WhatsApp and email.</p>
+        <p data-i18n="vis-hours-4">For current photos, next steps, and optional support for the first roof phase, visit the restoration journal or Patreon.</p>
+        <div class="status-actions">
+          <a class="button primary" href="restoration-progress.html" data-i18n="vis-hours-cta-1">View Restoration Journal</a>
+          <a class="button secondary" href="https://patreon.com/Ruben_CasinoMayorRestoration" target="_blank" rel="noopener noreferrer" data-i18n="vis-hours-cta-2">Support on Patreon</a>
         </div>
-        <div class="cta-row">
-          <a class="button primary" href="mailto:casinomayor.es@gmail.com?subject=Casino%20Mayor%20planning%20enquiry" data-i18n="banner-cta-1">Start an Enquiry</a>
-          <a class="button secondary" href="#dining" data-i18n="banner-cta-2">View Dining</a>
-        </div>
-      </div>
+      </aside>
     </section>
   </main>
 
