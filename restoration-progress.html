@@ -1518,6 +1518,12 @@
           }
         }
       });
+      document.querySelectorAll('[data-i18n-alt]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-alt');
+        if (t[lang] && t[lang][key] !== undefined) {
+          el.setAttribute('alt', t[lang][key]);
+        }
+      });
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-es').classList.toggle('active', lang === 'es');
       document.documentElement.lang = lang;

@@ -1412,14 +1412,14 @@
         <span></span>
       </button>
       <nav id="site-nav">
-        <a href="#restoration" data-i18n="nav-progress">Restoration</a>
+        <a href="#restoration" data-i18n="nav-progress">Current State</a>
         <a href="#experiences" data-i18n="nav-experiences">Experiences</a>
         <a href="#heritage" data-i18n="nav-heritage">Heritage</a>
         <a href="#dining" data-i18n="nav-dining">Dining</a>
         <a href="#agenda" data-i18n="nav-agenda">Agenda</a>
         <a href="#events" data-i18n="nav-events">Events</a>
         <a href="#visit" data-i18n="nav-visit">Visit</a>
-        <a href="restoration-progress.html" data-i18n="nav-journal">Restoration Journal</a>
+        <a href="restoration-progress.html" data-i18n="nav-journal">Restoration &amp; Support</a>
         <div class="lang-switcher">
           <button class="lang-toggle active" id="btn-en" onclick="setLang('en')">EN</button>
           <button class="lang-toggle" id="btn-es" onclick="setLang('es')">ES</button>
@@ -1440,7 +1440,7 @@
           <div class="hero-divider" aria-hidden="true"></div>
           <p data-i18n="hero-p">This building has stood for generations in Candelario. Today we are documenting its current state and the path toward its next chapter, blending history, craftsmanship, and future community experiences.</p>
           <div class="actions">
-            <a class="button primary" href="restoration-progress.html" data-i18n="btn-plan">Follow the Restoration</a>
+            <a class="button primary" href="restoration-progress.html" data-i18n="btn-plan">View Restoration Journal</a>
             <a class="button secondary" href="mailto:casinomayor.es@gmail.com?subject=Casino%20Mayor%20project%20enquiry" data-i18n="btn-agenda">Get in Touch About the Project</a>
           </div>
           <div class="hero-facts">
@@ -1766,8 +1766,8 @@
   <script>
     const t = {
       en: {
-        'nav-progress': 'Restoration',
-        'nav-journal': 'Restoration Journal',
+        'nav-progress': 'Current State',
+        'nav-journal': 'Restoration & Support',
         'nav-experiences': 'Experiences',
         'nav-heritage': 'Heritage',
         'nav-dining': 'Dining',
@@ -1779,7 +1779,7 @@
         'hero-vision-tag': 'Illustrative Programme',
         'hero-h1': "A historic building in Candelario's historic center, on its way to becoming a place for dance, culture, and unforgettable evenings.",
         'hero-p': 'This building has stood for generations in Candelario. Today we are documenting its current state and the path toward its next chapter, blending history, craftsmanship, and future community experiences.',
-        'btn-plan': 'Follow the Restoration',
+        'btn-plan': 'View Restoration Journal',
         'btn-agenda': 'Get in Touch About the Project',
         'btn-heritage': 'Explore Heritage',
         'hero-fact-1-label': 'Preserve',
@@ -1966,8 +1966,8 @@
         'footer': 'Casino Mayor &middot; Candelario, Spain &middot; Stage &middot; Lounge &middot; Dining &middot; Latin Nights &middot; Events'
       },
       es: {
-        'nav-progress': 'Restauración',
-        'nav-journal': 'Diario de Restauración',
+        'nav-progress': 'Estado Actual',
+        'nav-journal': 'Restauración y Apoyo',
         'nav-experiences': 'Experiencias',
         'nav-heritage': 'Patrimonio',
         'nav-dining': 'Gastronomía',
@@ -1979,8 +1979,8 @@
         'hero-vision-tag': 'Programa Ilustrativo',
         'hero-h1': 'Un edificio histórico en el casco histórico de Candelario, en camino de convertirse en un lugar para el baile, la cultura y las veladas inolvidables.',
         'hero-p': 'Este edificio lleva generaciones en pie en Candelario. Hoy estamos documentando su estado actual y el camino hacia su próximo capítulo, uniendo historia, oficio y futuras experiencias para la comunidad.',
-        'btn-plan': 'Seguir la Restauración',
-        'btn-agenda': 'Contactar Sobre el Proyecto',
+        'btn-plan': 'Ver Diario de Restauración',
+        'btn-agenda': 'Contactar sobre el proyecto',
         'btn-heritage': 'Descubre el Patrimonio',
         'hero-fact-1-label': 'Conservar',
         'hero-fact-1-value': 'Cada viga, baldosa y sala guarda memoria',
@@ -2149,7 +2149,7 @@
         'vis-intro': 'Casino Mayor se presenta actualmente en su estado existente en el corazón de Candelario. Los programas, menús y eventos mostrados en esta página ilustran la visión de apertura, y se aceptan consultas sobre el futuro proyecto.',
         'vis-address': 'Dirección: C. Mayor, 5, 37710 Candelario, Salamanca, España',
         'vis-cta-1': 'Contactar',
-        'vis-cta-2': 'Consulta por Email',
+        'vis-cta-2': 'Consulta por correo',
         'vis-cta-3': 'Cómo Llegar',
         'vis-direct': 'Contacta para visitas privadas o consultas sobre el proyecto.',
         'vis-hours-h3': 'Estado del Proyecto y Acceso',
@@ -2172,6 +2172,12 @@
         var key = el.getAttribute('data-i18n');
         if (t[lang] && t[lang][key] !== undefined) {
           el.innerHTML = t[lang][key];
+        }
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-alt');
+        if (t[lang] && t[lang][key] !== undefined) {
+          el.setAttribute('alt', t[lang][key]);
         }
       });
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
